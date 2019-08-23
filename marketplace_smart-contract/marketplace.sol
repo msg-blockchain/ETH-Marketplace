@@ -213,10 +213,10 @@ contract AssetCoin {
     address owner;
     string name;
     uint8 totalAssets;
-    
+
     //Mapping of Addresses and Assetbalance
     mapping(address => uint8) public balances;
-    
+
     //Constructor for Creating a new Asset
     constructor(string memory _name) public {
         owner = msg.sender;
