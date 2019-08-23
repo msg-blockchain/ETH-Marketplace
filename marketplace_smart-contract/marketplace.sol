@@ -8,16 +8,16 @@ pragma solidity 0.5.11;
 
 //Contract for Marketplace
 contract Marketplace {
-    
+
     //Set Admin Address
     address admin;
-    
+
     //Create new Instance of Currency Smart Contract
     MarketCurrency public MainCurrency;
-    
+
     //Give Start Tokens to a new Account
     //event giveStartTokens(address newAccount, uint _amount);
-    
+
     //Constructor will be executed when Contract is deployed,
     //put in the Address of the MarketCurrency Smart Contract Address
     constructor (MarketCurrency _marketCurrency) public {
@@ -26,13 +26,13 @@ contract Marketplace {
     }
 
 //User----------------------------------------------
-    
+
     //Initial Coins a User gets when creating an Account
     uint256 initialCoins = 500;
-   
+
     //Counting Users
     uint256 public userCount = 0;
-   
+
     //User Instance 
     struct User {
         //Person ID
@@ -45,15 +45,15 @@ contract Marketplace {
         address userAddress;
         //Sellable items
     }
-    
+
     //Mapping with all Users
     mapping(uint => User) public allUsers;
-    
+
 //Auction--------------------------------------------
 
     //Counting Auctions
     uint256 public auctionCount = 0;
-    
+
     //Auction Instance
     struct Auction {
         //Auction Creator, points to a User in allusers, similar to userCount
@@ -73,17 +73,17 @@ contract Marketplace {
         //Last Bidder, points to a User in allusers, similar to userCount
         uint lastBidder;
     }
-    
+
     //Mapping with all Auctions
     mapping(uint => Auction) public allAuctions;
 
 //Currency--------------------------------------------
-  
+
     //Create the Marketplace Currency
     function createMarketCurrency(string memory _Name, string memory _Symbol) public {
         MainCurrency.createCurrency(_Name, _Symbol);
-    }  
-    
+    }
+
     //Show User balance
     function balanceOf(uint256 userId) public view returns (uint) {
         address _address = allUsers[userId].userAddress;
@@ -107,7 +107,7 @@ contract Marketplace {
     function showUser(uint index) public view returns (uint, string memory, int, address) {
         return (allUsers[index].userId, allUsers[index].name, allUsers[index].tradecoins, allUsers[index].userAddress);
     }
-   
+
     //Get User by Address
     function getUserByAddress() public view returns (uint) {
         for (uint i=0; i<userCount;i++) {
@@ -117,7 +117,7 @@ contract Marketplace {
             }
         }
     }
-    
+
     //Create Auction
     function createAuction(string memory _auctionName, string memory _asset,  uint _startPrice, uint _duration) public {
         //Auction Creator has be userAddress
@@ -136,7 +136,7 @@ contract Marketplace {
 //----------------------------------------------------------------------
 //Contract for Market Currency
 contract MarketCurrency {
-    
+
     //Total Number of Tokens
     uint256 public totalSupply = 1000000;
     //Name of Token
@@ -146,18 +146,18 @@ contract MarketCurrency {
 
     //Token Transfer Event
     event Transfer(address indexed _from, address indexed _to, uint _value);  
-    
+
     //Approve Event -> Allow someone to send Tokens from your Address
     event Approve(address indexed _owner, address indexed _spender, uint _value); 
-    
+
     //Addresses and associated Balances
     mapping(address => uint256) public balanceOf;
-    
+
     //Addresses and associated Allowances
     mapping(address => mapping(address => uint256)) public allowance;
-    
+
 //Functions
-    
+
     //Create the Market Currency
     function createCurrency(string memory _tokenName, string memory _tokenSymbol) public {
         name = _tokenName;
@@ -165,7 +165,7 @@ contract MarketCurrency {
         balanceOf[msg.sender] = totalSupply;
         emit Transfer(address(0), msg.sender, totalSupply);
     }
-    
+
     //Transfer Tokens from Owner Account
     function transfer(address _receiver, uint _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value);
@@ -174,14 +174,14 @@ contract MarketCurrency {
         emit Transfer(msg.sender, _receiver, _value);
         return true;
     }
-    
+
     //Approve a _Spender to send a specific _Value from your Address
     function approve(address _spender, uint256 _value) public returns (bool success) {
         allowance[msg.sender][_spender] = _value;
         emit Approve(msg.sender, _spender, _value);
         return true;
     }
-    
+
     //Transfer Tokens from one Address to another Address
     function transferFrom(address _from, address _to, uint _value) public returns (bool success) {
         require(_value <= balanceOf[_from]);
@@ -192,7 +192,7 @@ contract MarketCurrency {
         emit Transfer(_from, _to, _value);
         return true;
     }
-    
+
     //Check Balance of an Address
     function getBalance(address _checkAddress) public view returns (uint) {
         return balanceOf[_checkAddress];
@@ -224,7 +224,7 @@ contract AssetCoin {
         totalAssets = 1;
         balances[owner] = totalAssets;
     }
-    
+
     //Transfering an Asset
     event Transfer(address indexed _from, address indexed _to, uint8 _amount);
     function transfer(address _to) public returns (bool) {
@@ -237,7 +237,7 @@ contract AssetCoin {
         balances[_to] = 1;
         return true;
     }
-    
+
     //Get Balance of Address
     function getBalance(address _tokenAddress) public view returns (uint) {
         return balances[_tokenAddress];
