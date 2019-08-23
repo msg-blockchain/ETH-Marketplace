@@ -9,22 +9,6 @@ pragma solidity 0.5.11;
 //Contract for Marketplace
 contract Marketplace {
 
-    //Set Admin Address
-    address admin;
-
-    //Create new Instance of Currency Smart Contract
-    MarketCurrency public MainCurrency;
-
-    //Give Start Tokens to a new Account
-    //event giveStartTokens(address newAccount, uint _amount);
-
-    //Constructor will be executed when Contract is deployed,
-    //put in the Address of the MarketCurrency Smart Contract Address
-    constructor (MarketCurrency _marketCurrency) public {
-        MainCurrency = _marketCurrency;
-        admin = msg.sender;
-    }
-
 //User----------------------------------------------
 
     //Initial Coins a User gets when creating an Account
@@ -33,14 +17,14 @@ contract Marketplace {
     //Counting Users
     uint256 public userCount = 0;
 
-    //User Instance 
+    //User Instance
     struct User {
         //Person ID
         uint userId;
         //User name
         string name;
         //Amount of tradecoins
-        int tradecoins;
+        uint256 tradecoins;
         //User address
         address userAddress;
         //Sellable items
@@ -79,38 +63,33 @@ contract Marketplace {
 
 //Currency--------------------------------------------
 
-    //Create the Marketplace Currency
-    function createMarketCurrency(string memory _Name, string memory _Symbol) public {
-        MainCurrency.createCurrency(_Name, _Symbol);
-    }
-
     //Show User balance
-    function balanceOf(uint256 userId) public view returns (uint) {
+    function balanceById(uint256 userId) public view returns (uint) {
         address _address = allUsers[userId].userAddress;
-        MainCurrency.getBalance(_address);
+        getBalance(_address);
     }
 
 //Marketplace Functions---------------------------------
 
     //Create new User, every User has to be created from a different Address
-    function createNewUser(string memory _name, int _tradecoins) public{
+    function createNewUser(string memory _name) public{
         address userAddress = msg.sender;
         //Create Entry in List of all Users
-        allUsers[userCount] = User(userCount, _name, _tradecoins, userAddress);
+        allUsers[userCount] = User(userCount, _name, initialCoins, userAddress);
         //Create Entry in MarketCurrency Smart Contract
-        //MainCurrency.transferFrom()
+        transferFromContract(msg.sender, initialCoins);
         //emit giveStartTokens(msg.sender, initialCoins);
         userCount += 1;
     }
 
     //Show a User
-    function showUser(uint index) public view returns (uint, string memory, int, address) {
+    function showUser(uint index) public view returns (uint, string memory, uint256, address) {
         return (allUsers[index].userId, allUsers[index].name, allUsers[index].tradecoins, allUsers[index].userAddress);
     }
 
     //Get User by Address
     function getUserByAddress() public view returns (uint) {
-        for (uint i=0; i<userCount;i++) {
+        for (uint i = 0; i < userCount; i++) {
             if (allUsers[i].userAddress == msg.sender) {
                 uint userNumber = i+1;
                 return (userNumber);
@@ -131,12 +110,9 @@ contract Marketplace {
         assetCreator.createAsset(_asset);
         auctionCount += 1;
     }
-}
-
-//----------------------------------------------------------------------
-//Contract for Market Currency
-contract MarketCurrency {
-
+    
+    //Market Currency-----------------------------------------------------------------
+    
     //Total Number of Tokens
     uint256 public totalSupply = 1000000;
     //Name of Token
@@ -145,28 +121,40 @@ contract MarketCurrency {
     string public symbol;
 
     //Token Transfer Event
-    event Transfer(address indexed _from, address indexed _to, uint _value);  
+    event Transfer(address indexed _from, address indexed _to, uint _value);
 
     //Approve Event -> Allow someone to send Tokens from your Address
-    event Approve(address indexed _owner, address indexed _spender, uint _value); 
+    event Approve(address indexed _owner, address indexed _spender, uint _value);
 
     //Addresses and associated Balances
     mapping(address => uint256) public balanceOf;
 
     //Addresses and associated Allowances
     mapping(address => mapping(address => uint256)) public allowance;
+    
+    //Contract address
+    address contractAddress = address(this);
 
 //Functions
 
     //Create the Market Currency
-    function createCurrency(string memory _tokenName, string memory _tokenSymbol) public {
-        name = _tokenName;
-        symbol = _tokenSymbol;
+    function createCurrency(string memory _Name, string memory _Symbol) public {
+        name = _Name;
+        symbol = _Symbol;
         balanceOf[msg.sender] = totalSupply;
-        emit Transfer(address(0), msg.sender, totalSupply);
+        emit Transfer(address(0), contractAddress, totalSupply);
     }
 
-    //Transfer Tokens from Owner Account
+    //Transfer Tokens from Contract
+    function transferFromContract(address _receiver, uint _value) public returns (bool success) {
+        require(balanceOf[msg.sender] >= _value);
+        balanceOf[msg.sender] -= _value;
+        balanceOf[_receiver] += _value;
+        emit Transfer(contractAddress, _receiver, _value);
+        return true;
+    }
+    
+        //Transfer Tokens to Someone
     function transfer(address _receiver, uint _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value);
         balanceOf[msg.sender] -= _value;
