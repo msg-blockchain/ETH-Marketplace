@@ -71,6 +71,7 @@ contract Marketplace {
 
     //Create new User, every User has to be created from a different Address
     function createNewUser(string memory _name) public{
+        require(msg.sender /= )
         address userAddress = msg.sender;
         //Create Entry in List of all Users
         allUsers[userCount] = User(userCount, _name, userAddress);
@@ -80,10 +81,11 @@ contract Marketplace {
     }
 
     //Show a User
-    function showUser(uint index) public view returns (uint, string memory, address) {
-        return (allUsers[index].userId, allUsers[index].name, allUsers[index].userAddress);
+    function showUser(uint _index) public view returns (uint, string memory, address, uint256) {
+        return (allUsers[_index].userId, allUsers[_index].name, allUsers[_index].userAddress, balanceOf[allUsers[_index].userAddress]);
     }
 
+    //IN PROGRESS
     //Get User by Address
     function getUserByAddress() public view returns (uint) {
         for (uint i = 0; i < userCount; i++) {
