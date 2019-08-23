@@ -23,8 +23,6 @@ contract Marketplace {
         uint userId;
         //User name
         string name;
-        //Amount of tradecoins
-        uint256 tradecoins;
         //User address
         address userAddress;
         //Sellable items
@@ -75,16 +73,15 @@ contract Marketplace {
     function createNewUser(string memory _name) public{
         address userAddress = msg.sender;
         //Create Entry in List of all Users
-        allUsers[userCount] = User(userCount, _name, initialCoins, userAddress);
+        allUsers[userCount] = User(userCount, _name, userAddress);
         //Create Entry in MarketCurrency Smart Contract
         transferFromContract(msg.sender, initialCoins);
-        //emit giveStartTokens(msg.sender, initialCoins);
         userCount += 1;
     }
 
     //Show a User
-    function showUser(uint index) public view returns (uint, string memory, uint256, address) {
-        return (allUsers[index].userId, allUsers[index].name, allUsers[index].tradecoins, allUsers[index].userAddress);
+    function showUser(uint index) public view returns (uint, string memory, address) {
+        return (allUsers[index].userId, allUsers[index].name, allUsers[index].userAddress);
     }
 
     //Get User by Address
@@ -141,20 +138,20 @@ contract Marketplace {
     function createCurrency(string memory _Name, string memory _Symbol) public {
         name = _Name;
         symbol = _Symbol;
-        balanceOf[msg.sender] = totalSupply;
+        balanceOf[contractAddress] = totalSupply;
         emit Transfer(address(0), contractAddress, totalSupply);
     }
 
     //Transfer Tokens from Contract
     function transferFromContract(address _receiver, uint _value) public returns (bool success) {
-        require(balanceOf[msg.sender] >= _value);
-        balanceOf[msg.sender] -= _value;
+        require(balanceOf[contractAddress] >= _value);
+        balanceOf[contractAddress] -= _value;
         balanceOf[_receiver] += _value;
         emit Transfer(contractAddress, _receiver, _value);
         return true;
     }
     
-        //Transfer Tokens to Someone
+    //Transfer Tokens to Someone
     function transfer(address _receiver, uint _value) public returns (bool success) {
         require(balanceOf[msg.sender] >= _value);
         balanceOf[msg.sender] -= _value;
