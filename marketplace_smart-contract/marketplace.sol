@@ -4,6 +4,7 @@ pragma solidity 0.5.11;
  * createNewUser(): only specific addresses should be able to create a user, also just one per address
  * new function: show list of all Users
  * add item list / "inventory" for Users
+ * Error Messages
  */
 
 //Contract for Marketplace
@@ -71,21 +72,27 @@ contract Marketplace {
 
     //Create new User, every User has to be created from a different Address
     function createNewUser(string memory _name) public{
-        require(msg.sender /= )
-        address userAddress = msg.sender;
+        address senderAddress = msg.sender;
+        bool exists = false;
+        //Check if User already exists
+        for (uint i=0; i<userCount; i++) {
+            if (allUsers[i].userAddress == senderAddress) {
+                exists = true;
+            }
+        }
+        require(exists = false, "User Creation failed because Address is already used.");
         //Create Entry in List of all Users
-        allUsers[userCount] = User(userCount, _name, userAddress);
+        allUsers[userCount] = User(userCount, _name, senderAddress);
         //Create Entry in MarketCurrency Smart Contract
         transferFromContract(msg.sender, initialCoins);
         userCount += 1;
     }
 
     //Show a User
-    function showUser(uint _index) public view returns (uint, string memory, address, uint256) {
-        return (allUsers[_index].userId, allUsers[_index].name, allUsers[_index].userAddress, balanceOf[allUsers[_index].userAddress]);
+    function showUser(uint index) public view returns (uint, string memory, address) {
+        return (allUsers[index].userId, allUsers[index].name, allUsers[index].userAddress);
     }
 
-    //IN PROGRESS
     //Get User by Address
     function getUserByAddress() public view returns (uint) {
         for (uint i = 0; i < userCount; i++) {
