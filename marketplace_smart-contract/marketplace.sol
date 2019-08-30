@@ -34,31 +34,25 @@ contract Marketplace {
 
 //Auction--------------------------------------------
 
-    //Counting Auctions
-    uint256 public auctionCount = 0;
+    //Counting Orders
+    uint256 public orderCount = 0;
 
-    //Auction Instance
-    struct Auction {
-        //Auction Creator, points to a User in allusers, similar to userCount
-        uint auctionCreator;
-        //Auction ID
-        uint auctionId;
+    //Order Instance
+    struct Order {
+        //Order Creator, points to a User in allusers, similar to userCount
+        uint orderCreator;
+        //Order ID
+        uint orderId;
         //Auction Name
-        string auctionName;
-        //Asset Name
-        string assset;
-        //Start Price
-        uint startPrice;
-        //Current Price
-        uint currentPrice;
-        //Auction Duration
-        uint auctionDuration;
-        //Last Bidder, points to a User in allusers, similar to userCount
-        uint lastBidder;
+        string orderName;
+        //Order Type (Buy or Sell), if True -> Buy Order, if False -> Sell Order
+        bool buy;
+        //Order Price
+        uint orderPrice;
     }
 
-    //Mapping with all Auctions
-    mapping(uint => Auction) public allAuctions;
+    //Mapping with all Orders
+    mapping(uint => Order) public allOrders;
 
 //Currency--------------------------------------------
 
@@ -75,7 +69,7 @@ contract Marketplace {
         address senderAddress = msg.sender;
         bool exists = false;
         //Check if User already exists
-        for (uint i=0; i<userCount; i++) {
+        for (uint i = 0; i < userCount; i++) {
             if (allUsers[i].userAddress == senderAddress) {
                 exists = true;
             }
@@ -89,8 +83,8 @@ contract Marketplace {
     }
 
     //Show a User
-    function showUser(uint index) public view returns (uint, string memory, address) {
-        return (allUsers[index].userId, allUsers[index].name, allUsers[index].userAddress);
+    function showUser(uint index) public view returns (uint, string memory, address, uint256) {
+        return (allUsers[index].userId, allUsers[index].name, allUsers[index].userAddress, balanceOf[allUsers[index].userAddress]);
     }
 
     //Get User by Address
@@ -103,18 +97,12 @@ contract Marketplace {
         }
     }
 
-    //Create Auction
-    function createAuction(string memory _auctionName, string memory _asset,  uint _startPrice, uint _duration) public {
-        //Auction Creator has be userAddress
-        uint auctionCreator = getUserByAddress();
-        //Create Entry in List of all Auctions
-        allAuctions[auctionCount] = Auction(
-            auctionCreator, auctionCount, _auctionName,
-            _asset, _startPrice, _startPrice,
-            _duration, auctionCreator);
-        AssetCreation assetCreator = new AssetCreation();
-        assetCreator.createAsset(_asset);
-        auctionCount += 1;
+    //Create Order
+    function createOrder(string memory _Name, bool _Buy, uint _Price) public {
+        uint256 orderCreator = getUserByAddress();
+        //Create Entry in List of all Orders
+        allOrders[orderCount] = Order(orderCreator, orderCount, _Name, _Buy, _Price);
+        orderCount += 1;
     }
     
     //Market Currency-----------------------------------------------------------------
@@ -191,49 +179,74 @@ contract Marketplace {
     function getBalance(address _checkAddress) public view returns (uint) {
         return balanceOf[_checkAddress];
     }
-}
+    
+    //Assets-----------------------------------------------------------------------------------
 
-//---------------------------------------------------------------------------------------------------------------------
-//Contract for Asset Creation
-contract AssetCreation {
-    function createAsset(string memory __assetName) public {
-        new AssetCoin(__assetName);
+    //Name of Asset
+    string public AssetName;
+
+    //Counting Assets
+    uint256 public AssetCounter = 0;
+    
+    //Token Transfer Event
+    event AssetTransfer(address indexed _from, address indexed _to, uint _value);
+
+    //Approve Event -> Allow someone to send Tokens from your Address
+    event AssetApprove(address indexed _owner, address indexed _spender, uint _value);
+
+    //Asset IDs and Names
+    mapping(uint256 => string) AssetList;
+
+    //Addresses and associated Assets and Balances
+    mapping(address => mapping(uint256 => uint256)) public AssetBalanceOf;
+
+    //Addresses and associated Allowances
+    mapping(address => mapping(address => uint256)) public assetAllowance;
+    
+//Functions
+
+    //IN PROGRESS==============================================
+
+    //Create Asset
+    function createAsset(string memory _Name, string memory _Symbol) public {
+        name = _Name;
+        balanceOf[contractAddress] = totalSupply;
+        emit Transfer(address(0), contractAddress, totalSupply);
     }
-}
 
-//Contract for Assets
-contract AssetCoin {
-    //Variables
-    address owner;
-    string name;
-    uint8 totalAssets;
-
-    //Mapping of Addresses and Assetbalance
-    mapping(address => uint8) public balances;
-
-    //Constructor for Creating a new Asset
-    constructor(string memory _name) public {
-        owner = msg.sender;
-        name = _name;
-        totalAssets = 1;
-        balances[owner] = totalAssets;
+    //Transfer Asset from Contract
+    function transferAssetFromContract(address _receiver, uint _value) public returns (bool success) {
+        require(balanceOf[contractAddress] >= _value);
+        balanceOf[contractAddress] -= _value;
+        balanceOf[_receiver] += _value;
+        emit Transfer(contractAddress, _receiver, _value);
+        return true;
     }
-
-    //Transfering an Asset
-    event Transfer(address indexed _from, address indexed _to, uint8 _amount);
-    function transfer(address _to) public returns (bool) {
-        //Check if Sender owns Asset
-        //Update Balances
-        address _from = msg.sender;
-        owner = _to;
-        emit Transfer(_from, _to, 1);
-        balances[_from] = 0;
-        balances[_to] = 1;
+    
+    //Transfer Asset to Someone
+    function transferAsset(address _receiver, uint _value) public returns (bool success) {
+        require(balanceOf[msg.sender] >= _value);
+        balanceOf[msg.sender] -= _value;
+        balanceOf[_receiver] += _value;
+        emit Transfer(msg.sender, _receiver, _value);
         return true;
     }
 
-    //Get Balance of Address
-    function getBalance(address _tokenAddress) public view returns (uint) {
-        return balances[_tokenAddress];
+    //Approve a _Spender to send a specific Asset _Value from your Address
+    function approveAsset(address _spender, uint256 _value) public returns (bool success) {
+        allowance[msg.sender][_spender] = _value;
+        emit Approve(msg.sender, _spender, _value);
+        return true;
+    }
+
+    //Transfer Asset from one Address to another Address
+    function transferAssetFrom(address _from, address _to, uint _value) public returns (bool success) {
+        require(_value <= balanceOf[_from]);
+        require(_value <= allowance[_from][msg.sender]);
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+        allowance[_from][msg.sender] -= _value;
+        emit Transfer(_from, _to, _value);
+        return true;
     }
 }
