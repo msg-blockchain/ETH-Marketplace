@@ -152,7 +152,7 @@ contract Marketplace {
             //Send Funds from Order Filler to Order Creator
             transferFrom(allUsers[orderFiller].userAddress, allUsers[orderCreator].userAddress, costs);
         }
-        allOrders[_orderNumber].active == false;
+        allOrders[_orderNumber].active = false;
     }
     
 //Market Currency related Variables and Functions
@@ -167,7 +167,7 @@ contract Marketplace {
     //Token Transfer Event
     event Transfer(address indexed _from, address indexed _to, uint _value);
 
-    //Approve Event -> Allow someone to send Tokens from your Address
+    //Approve Event -> Allow someone to send a certain Amount of Tokens from your Address
     event Approve(address indexed _owner, address indexed _spender, uint _value);
 
     //Addresses and associated Balances
