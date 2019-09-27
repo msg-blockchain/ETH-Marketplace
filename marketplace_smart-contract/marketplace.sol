@@ -227,7 +227,7 @@ contract Marketplace {
     /*
     Approve a _Spender to send a specific _Value from your Address
     */
-    function approve(address _spender, uint _value) public returns (bool success) {
+    function approve(address _spender, uint _value) private returns (bool success) {
         allowance[msg.sender][_spender] = _value;
         emit Approve(msg.sender, _spender, _value);
         return true;
