@@ -157,30 +157,30 @@ contract Marketplace {
 
     //New User Event
     event NewUser(uint indexed userId, string indexed name, address indexed userAddress);
-    
+
     //New Order Event
     event NewOrder(uint orderCreator, uint orderId, string indexed orderName, bool indexed buy, uint orderPrice, bool indexed active);
-    
+
     //Order Filled Event
     event OrderFilled(uint orderCreator, uint orderId, string indexed orderName, bool indexed buy, uint  orderPrice, bool indexed active);
-    
+
 //Market Currency related Variables, Functions and Events
-    
+
     //Total Number of Tokens (considering Decimals: 1,000,000,000,000)
     uint public totalSupply = 1000000000000000000000000;
-    
+
     //Token Decimals, only relevant for display
     uint decimals = 12;
-    
+
     //Number of Tokens sold
     uint public tokensSold = 0;
-    
+
     //Token Price, Wei / Token (not considering Decimals)
     uint tokenPrice = 1;
-    
+
     //Name of Token
     string public name = "MegaMarket Coin";
-    
+
     //Symbol of Token
     string public symbol = "MMC";
 
@@ -189,7 +189,7 @@ contract Marketplace {
 
     //Approve Event -> Allow someone to send a certain Amount of Tokens from your Address
     event Approve(address indexed _owner, address indexed _spender, uint _value);
-    
+
     //Sell Event
     event Sell(address indexed _buyer, uint _amount);
 
@@ -198,7 +198,7 @@ contract Marketplace {
 
     //Addresses and associated Allowances
     mapping (address => mapping(address => uint)) private allowance;
-    
+
     //Contract Address
     address contractAddress = address(this);
 
@@ -212,7 +212,7 @@ contract Marketplace {
         emit Transfer(contractAddress, _receiver, _value);
         return true;
     }
-    
+
     /*
     Transfer Tokens to Someone
     */
