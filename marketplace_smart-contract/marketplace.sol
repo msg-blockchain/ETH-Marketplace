@@ -170,13 +170,13 @@ contract Marketplace {
     uint public totalSupply = 1000000000000000000000000;
 
     //Token Decimals, only relevant for display
-    uint decimals = 12;
+    uint public decimals = 12;
 
     //Number of Tokens sold
     uint public tokensSold = 0;
 
     //Token Price, Wei / Token (not considering Decimals)
-    uint tokenPrice = 1;
+    uint public tokenPrice = 1;
 
     //Name of Token
     string public name = "MegaMarket Coin";
