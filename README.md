@@ -11,7 +11,7 @@ Functionality: Create Users, create Orders, fill Orders, buy MegaMarket Coins (M
    1. Under "Import from" chose "GitHub" and enter "https://github.com/msg-blockchain/poc-marketplace/blob/master/marketplace_smart-contract/marketplace.sol"
    2. Choose "marketplace.sol" in the file explorer
    3. Under "Deploy and run transactions" on the left set "Environment" to "Injected Web3" and connect to MetaMask
-   4. Set "At Address" to "0x444Aa39A5666a7BF8044C3683Da70d05BAD0E278" and confirm
+   4. Set "At Address" to "0xF64082e10684885Cff685c20BD165Fc00b315fd6" and confirm
    5. Unfold Contract on the left to see all Functions and interact with the Contract
 
 ### Recommended Actions:
