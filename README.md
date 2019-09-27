@@ -5,12 +5,14 @@ Functionality: Create Users, create Orders, fill Orders, buy MegaMarket Coins (M
 
 1. Install Metamask Extension -> https://metamask.io/
 2. Set up a Wallet
-3. Switch to Ropsten Testnetwork in MetaMask
+3. Switch from "Ethereum Mainnet" to "Ropsten Testnetwork" in MetaMask
 4. Get Testnet Ether from Faucet -> https://faucet.metamask.io/
 5. Go to http://remix.ethereum.org
-   1. Under "Deploy and run transactions" set "Environment" to "injected Web3" and connect to MetaMask
-   2. Set "At Address" to "0x4c33d8Ea707c4b65Db043898C602CeD0640e1fC2" and confirm
-   3. Unfold Contract on the left to see all Functions and interact with the Contract
+   1. Under "Import from" chose "GitHub" and enter "https://github.com/msg-blockchain/poc-marketplace/blob/master/marketplace_smart-contract/marketplace.sol"
+   2. Choose "marketplace.sol" in the file explorer
+   3. Under "Deploy and run transactions" on the left set "Environment" to "Injected Web3" and connect to MetaMask
+   4. Set "At Address" to "0x4c33d8Ea707c4b65Db043898C602CeD0640e1fC2" and confirm
+   5. Unfold Contract on the left to see all Functions and interact with the Contract
 
 ### Recommended Actions:
 
