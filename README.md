@@ -6,7 +6,7 @@ Functionality: Create Users, create Orders, fill Orders, buy MegaMarket Coins (M
 1. Install Metamask Extension -> https://metamask.io/
 2. Set up a Wallet
 3. Switch to Ropsten Testnetwork in MetaMask
-4. Get Testnet Ether from Faucet -> https://faucet.ropsten.be/
+4. Get Testnet Ether from Faucet -> https://faucet.metamask.io/
 5. Go to http://remix.ethereum.org
    1. Under "Deploy and run transactions" set "Environment" to "injected Web3" and connect to MetaMask
    2. Set "At Address" to "0x4c33d8Ea707c4b65Db043898C602CeD0640e1fC2" and confirm
