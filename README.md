@@ -34,4 +34,4 @@ Functionality: Create Users, create Orders, fill Orders, buy MegaMarket Coins (M
 
 **Smart Contract:** https://ropsten.etherscan.io/address/0xf64082e10684885cff685c20bd165fc00b315fd6
 
-**ERC20 Token:** https://ropsten.etherscan.io/token/0xf64082e10684885cff685c20bd165fc00b315fd6
+**Token Tracker:** https://ropsten.etherscan.io/token/0xf64082e10684885cff685c20bd165fc00b315fd6
