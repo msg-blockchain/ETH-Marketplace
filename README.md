@@ -1,5 +1,5 @@
 # A minimalist Ethereum based Marketplace
-Functionality: Create Users, create Orders, fill Orders, buy MegaMarket Coins (MMC) with Ethereum
+Functionality: Create Users, create Orders, fill Orders, buy MegaMarket Coins (MMC) with Ethereum etc.
 
 ## How to interact with the Contract
 
@@ -8,7 +8,7 @@ Functionality: Create Users, create Orders, fill Orders, buy MegaMarket Coins (M
 3. Switch from *Ethereum Mainnet* to *Ropsten Testnetwork* in MetaMask
 4. Get Testnet Ether from Faucet -> https://faucet.metamask.io/ (can be used multiple times)
 5. Go to http://remix.ethereum.org
-   1. Under "Import from" chose *GitHub* and enter "https://github.com/msg-blockchain/poc-marketplace/blob/master/marketplace_smart-contract/marketplace.sol"
+   1. Under "Import from" choose *GitHub* and enter *https://github.com/msg-blockchain/poc-marketplace/blob/master/marketplace_smart-contract/marketplace.sol*
    2. Select "marketplace.sol" in the file explorer (unfold all folders under "Github")
    3. Under "Deploy and run transactions" in the left sidebar set *Environment" to "Injected Web3* and connect to MetaMask
    4. Set "At Address" to *0xF64082e10684885Cff685c20BD165Fc00b315fd6* and confirm by clicking "At Address"
@@ -29,7 +29,7 @@ Functionality: Create Users, create Orders, fill Orders, buy MegaMarket Coins (M
   - *Orange*: State changing functions (adding data to the blockchain)
   - *Blue*: Calls (that only show information form the Bockchain and have no costs)
 - When Creating an Order: to set a price of 500 MMC you have to write *500000000000000* (add 12 zeros)
-- You can add the MegaMarket Coin to MetaMask with the "Add Token" button and inserting the contract address "0xf64082e10684885cff685c20bd165fc00b315fd6"
+- You can add the MegaMarket Coin to MetaMask with the "Add Token" button and inserting the contract address *0xf64082e10684885cff685c20bd165fc00b315fd6*
 - Read the Smart Contract, see the relevant transactions, check the token distribution etc. with the links below
 
 **Smart Contract:** https://ropsten.etherscan.io/address/0xf64082e10684885cff685c20bd165fc00b315fd6
