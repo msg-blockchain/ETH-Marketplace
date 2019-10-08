@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<title>Buy MegaMarket Coins</title>
+	<link rel="stylesheet" href="./files/stylesheet.css">
+</head>
+
+<body>
+	<div class="main_frame">
+		<svg class="box">
+		</svg>
+		<div class="big_text">
+			<span>Buy MMC</span>
+		</div>
+		<div class="small_text" style="position: absolute; left: 240px; top: 220px;">
+			<span>How many MegaMarket Coins (MMC) <br />would you like to buy?<br /><br />(1
+				MMC = 0.000001 ETH)</span>
+		</div>
+		<div class="small_text" style="position: absolute; left: 240px; top: 440px;">
+			<span>Amount of MMC</span>
+		</div>
+		<div class="small_text" style="position: absolute; left: 560px; top: 440px;">
+			<span>Costs in ETH</span>
+		</div>
+		<form class="small_text">
+			<input oninput="x.value=parseInt(a.value)/1000000" class="number_input" type="number" id="a" min="1" max="1000000000000"
+				step="100" style="position: absolute; left: 240px; top: 490px;">
+			</input>
+			<output name="x" for="a" class="number_output" style="position: absolute; left: 560px; top: 490px;">
+			</output>
+		</form>
+		<a href="Main.html">
+			<button class="back_button">
+				<div class="back_button_arrow">
+					<svg class="back_button_arrow_path" viewBox="4 4 20 20">
+						<path fill="rgba(0,0,0,1)"
+							d="M 24 12.75 L 8.75 12.75 L 15.75 5.75 L 14 4 L 4 14 L 14 24 L 15.75 22.25 L 8.75 15.25 L 24 15.25 L 24 12.75 L 24 12.75 Z">
+						</path>
+					</svg>
+				</div>
+			</button>
+		</a>
+		<a href="Main.html">
+			<button class="next">
+				<div class="continue">
+					<span>buy</span>
+				</div>
+			</button>
+		</a>
+		<div class="MMC_balance_number">
+			<span>5000</span>
+		</div>
+		<div class="MMC_balance_wrapper">
+			<svg class="MMC_coin">
+			</svg>
+			<div class="MMC_coin_text">
+				<span>MMC</span>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
