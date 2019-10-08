@@ -583,6 +583,11 @@ window.addEventListener('load', async () => {
     console.log(user_account);
 
     //Get User Balance
-    contract.methods.balanceById(0).call().then(console.log);
+    contract.methods.balanceById(0).send({from: user_account}, function(error, transactionHash) {
+        if(!error)
+        console.log(JSON.stringify(transactionHash));
+    else
+        console.error(error);
+ });
 
 });
