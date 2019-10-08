@@ -565,10 +565,12 @@ window.addEventListener('load', () => {
     console.log(user_account);
 
     contract.balanceById('0').call((error, result) => {
-        if(error) {
-            return console.log(error);
+        if(!error) {
+            console.log(JSON.stringify(result));
         }
-        $('#getUserIdByAddress').text(result);
+        else {
+            console.error(error);
+        }
     });
 
 });
