@@ -561,7 +561,7 @@ window.addEventListener('load', () => {
     
     contract = web3.eth.contract(abi).at(contract_address);
 
-    contract.getUserIdByAddress().call((error, result) => {
+    contract.balanceById('0').call((error, result) => {
         if(error) {
             return console.log(error);
         }
