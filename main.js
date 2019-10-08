@@ -550,7 +550,7 @@ const abi = [
 ];
 const desiredNetwork = '3';
 
-let contract;
+const contract;
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
     if (window.ethereum) {
@@ -589,6 +589,13 @@ window.addEventListener('load', async () => {
       var result = contract.owner.call((error, result) => {
         console.log(result);
     });
+
+    contract.agencies.call(0, (error, result) => {
+        if (!error) {
+          console.log(result.name);
+          console.log(result.dna);
+        }
+    }); 
 
     //contract.symbol().call().then(console.log);
     //contract.balanceById(0).call().then(console.log);
