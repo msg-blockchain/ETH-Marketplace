@@ -563,8 +563,10 @@ window.addEventListener('load', () => {
     web3.eth.getAccounts(console.log);
     const user_address = ethereum.selectedAddress;
     console.log(user_address);
-    contract.balanceOf()
 
 });
 
 
+web3.eth.getAccounts(console.log);
+const user_address = ethereum.selectedAddress;
+console.log(user_address);
