@@ -583,9 +583,11 @@ window.addEventListener('load', async () => {
     console.log(user_account);
     
     web3.eth.getBalance(web3.eth.accounts[0], (err, wei) => {
-
         console.log('le balance est ' + web3.fromWei(wei, 'ether'))
       });
+
+    contract.methods.owner().call().then(console.log);
+
     //contract.symbol().call().then(console.log);
     //contract.balanceById(0).call().then(console.log);
 
