@@ -554,7 +554,9 @@ window.addEventListener('load', () => {
     if(typeof(web3) == 'undefined') {
         return console.log("Metamask is not installed");
     }
-
+    else {
+        return console.log("Metamask is installed");
+    }
     contract = web3.eth.contract(api).at(contract_address);
 
 });
