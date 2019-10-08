@@ -36,6 +36,7 @@
     border-right: none;
     border-bottom-color: black;
     color: black;
+    border-width: 1px;
 }
 
 .text_input {
