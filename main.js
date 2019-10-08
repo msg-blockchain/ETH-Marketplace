@@ -551,6 +551,7 @@ const abi = [
 
 
 let contract;
+web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
     if (window.ethereum) {
@@ -575,18 +576,21 @@ window.addEventListener('load', async () => {
       console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
     }
     
+    //Set Contract
     contract = web3.eth.contract(abi).at(contract_address);
 
+    //Get User Address
     var user_account = web3.eth.accounts;
     console.log(user_account);
 
-    contract.balanceById(0).call((error, result) => {
-        if(!error) {
-            console.log(JSON.stringify(result));
-        }
-        else {
-            console.error(error);
-        }
-    });
+    //Get User Balance
+    //contract.methods.balanceById(0).call({from: user_account}, function(error, result) {
+    //    if(!error)
+    //    console.log(JSON.stringify(result));
+    //else
+    //    console.error(error);
+    //});
+    contract.methods.symbol().call().then(console.log);
+    contract.methods.balanceById(0).call().then(console.log);
 
 });
