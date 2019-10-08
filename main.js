@@ -548,10 +548,9 @@ const abi = [
 		"type": "event"
 	}
 ];
-
+const desiredNetwork = '3';
 
 let contract;
-web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
     if (window.ethereum) {
@@ -582,15 +581,16 @@ window.addEventListener('load', async () => {
     //Get User Address
     var user_account = web3.eth.accounts;
     console.log(user_account);
+    
+    web3.eth.getBalance(web3.eth.accounts[0], (err, wei) => {
+        console.log('le balance est ' + web3.fromWei(wei, 'ether'))
+      });
 
-    //Get User Balance
-    //contract.methods.balanceById(0).call({from: user_account}, function(error, result) {
-    //    if(!error)
-    //    console.log(JSON.stringify(result));
-    //else
-    //    console.error(error);
-    //});
-    contract.symbol().call().then(console.log);
-    contract.balanceById(0).call().then(console.log);
+      var result = contract.owner.call((error, result) => {
+        console.log(result);
+    });
+
+    //contract.symbol().call().then(console.log);
+    //contract.balanceById(0).call().then(console.log);
 
 });
