@@ -586,7 +586,9 @@ window.addEventListener('load', async () => {
         console.log('le balance est ' + web3.fromWei(wei, 'ether'))
       });
 
-    contract.methods.owner().call().then(console.log);
+      var result = contract.methods.owner.call().call((error, result) => {
+        console.log(result);
+    });
 
     //contract.symbol().call().then(console.log);
     //contract.balanceById(0).call().then(console.log);
