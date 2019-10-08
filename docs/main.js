@@ -566,8 +566,3 @@ window.addEventListener('load', () => {
     console.log(user_address);
 
 });
-
-
-web3.eth.getAccounts(console.log);
-const user_address = ethereum.selectedAddress;
-console.log(user_address);
