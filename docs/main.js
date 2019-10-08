@@ -549,8 +549,8 @@ const abi = [
 	}
 ];
 const desiredNetwork = '3';
+const contract = web3.eth.contract(abi).at(contract_address);
 
-const contract;
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
     if (window.ethereum) {
@@ -574,9 +574,6 @@ window.addEventListener('load', async () => {
     else {
       console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
     }
-    
-    //Set Contract
-    contract = web3.eth.contract(abi).at(contract_address);
 
     //Get User Address
     var user_account = web3.eth.accounts;
