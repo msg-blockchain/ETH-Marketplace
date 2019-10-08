@@ -561,6 +561,9 @@ window.addEventListener('load', () => {
     
     contract = web3.eth.contract(abi).at(contract_address);
 
+    const user_account = web3.eth.accounts[0];
+    console.log(user_account);
+
     contract.balanceById('0').call((error, result) => {
         if(error) {
             return console.log(error);
