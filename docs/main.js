@@ -587,7 +587,7 @@ window.addEventListener('load', async () => {
         console.log(result);
     });
 
-    return new Promise((resolve, reject) => {
+    var test1 = new Promise((resolve, reject) => {
         contract.symbol().call(function (error, result) {
           if (error) {
             console.log(error);
@@ -597,6 +597,7 @@ window.addEventListener('load', async () => {
         });
       });
 
+    console.log(test1);
     //contract.symbol().call().then(console.log);
     //contract.balanceById(0).call().then(console.log);
 
