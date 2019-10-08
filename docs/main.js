@@ -551,7 +551,6 @@ const abi = [
 
 
 let contract;
-web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
     if (window.ethereum) {
@@ -583,14 +582,14 @@ window.addEventListener('load', async () => {
     var user_account = web3.eth.accounts;
     console.log(user_account);
     
-    contract.balanceById(0).call({from: user_account}, function(error, result) {
-        if(!error) {
-            console.log(JSON.stringify(result));
-        }
-        else {
-            console.error(error);
-        }
-    });
+    //contract.balanceById(0).call({from: user_account}, function(error, result) {
+    //    if(!error) {
+    //        console.log(JSON.stringify(result));
+    //    }
+    //    else {
+    //        console.error(error);
+    //    }
+    //});
     //contract.symbol().call().then(console.log);
     //contract.balanceById(0).call().then(console.log);
 
