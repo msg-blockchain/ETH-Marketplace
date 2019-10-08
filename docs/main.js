@@ -548,7 +548,7 @@ const abi = [
 		"type": "event"
 	}
 ];
-
+const desiredNetwork = '3';
 
 let contract;
 window.addEventListener('load', async () => {
@@ -578,21 +578,13 @@ window.addEventListener('load', async () => {
     //Set Contract
     contract = web3.eth.contract(abi).at(contract_address);
 
-    var test = contract.symbol().getData();
-    console.log(test);
-
     //Get User Address
     var user_account = web3.eth.accounts;
     console.log(user_account);
     
-    contract.methods.balanceById(0).call((error, result) => {
-        if(!error) {
-            console.log(JSON.stringify(result));
-        }
-        else {
-            console.error(error);
-        }
-    });
+    var nw = web3.eth.networkVersion;
+    console.log(nw);
+
     //contract.symbol().call().then(console.log);
     //contract.balanceById(0).call().then(console.log);
 
