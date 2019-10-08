@@ -549,6 +549,7 @@ const abi = [
 	}
 ];
 
+
 let contract;
 window.addEventListener('load', () => {
     if(typeof(web3) == 'undefined') {
@@ -558,6 +559,11 @@ window.addEventListener('load', () => {
         return console.log("Metamask is installed");
     }
     contract = web3.eth.contract(api).at(contract_address);
+    
+    web3.eth.getAccounts(console.log);
+    const user_address = ethereum.selectedAddress;
+    console.log(user_address);
+    contract.balanceOf()
 
 });
 
