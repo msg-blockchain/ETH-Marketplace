@@ -551,7 +551,7 @@ const abi = [
 
 
 let contract;
-let web3Provider = new ethers.providers.Web3Provider(provider); 
+web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
     if (window.ethereum) {
