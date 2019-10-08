@@ -578,10 +578,15 @@ window.addEventListener('load', async () => {
     //Set Contract
     contract = web3.eth.contract(abi).at(contract_address);
 
+    var contract_methods = contract.methods;
+    console.log(contract_methods);
+
     //Get User Address
     var user_account = web3.eth.accounts;
     console.log(user_account);
     
+
+
     contract.methods.balanceById(0).call((error, result) => {
         if(!error) {
             console.log(JSON.stringify(result));
