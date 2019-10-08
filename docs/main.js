@@ -577,17 +577,16 @@ window.addEventListener('load', async () => {
     
     contract = web3.eth.contract(abi).at(contract_address);
 
-
     var user_account = web3.eth.accounts;
     console.log(user_account);
 
-    //contract.balanceById(0).call((error, result) => {
-    //    if(!error) {
-    //        console.log(JSON.stringify(result));
-    //    }
-    //    else {
-    //        console.error(error);
-    //    }
-    //});
+    contract.balanceById(0).call((error, result) => {
+        if(!error) {
+            console.log(JSON.stringify(result));
+        }
+        else {
+            console.error(error);
+        }
+    });
 
 });
