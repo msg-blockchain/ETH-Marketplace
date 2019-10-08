@@ -565,16 +565,20 @@ window.addEventListener('load', () => {
     //var user_account = web3.eth.accounts;
     //console.log(user_account);
 
-    var blockNumber = web3.eth.blockNumber;
-    console.log(blockNumber);
-
-    contract.balanceById(0).call((error, result) => {
-        if(!error) {
+    web3.eth.getBlock(48, function(error, result){
+        if(!error)
             console.log(JSON.stringify(result));
-        }
-        else {
+        else
             console.error(error);
-        }
-    });
+     })
+
+    //contract.balanceById(0).call((error, result) => {
+    //    if(!error) {
+    //        console.log(JSON.stringify(result));
+    //    }
+    //    else {
+    //        console.error(error);
+    //    }
+    //});
 
 });
