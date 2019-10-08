@@ -582,9 +582,10 @@ window.addEventListener('load', async () => {
     var user_account = web3.eth.accounts;
     console.log(user_account);
     
-    var nw = web3.eth.networkVersion;
-    console.log(nw);
+    web3.eth.getBalance(web3.eth.accounts[0], (err, wei) => {
 
+        console.log('le balance est ' + web3.fromWei(wei, 'ether'))
+      });
     //contract.symbol().call().then(console.log);
     //contract.balanceById(0).call().then(console.log);
 
