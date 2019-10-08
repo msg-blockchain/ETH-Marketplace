@@ -559,7 +559,7 @@ window.addEventListener('load', () => {
         console.log("Metamask is installed");
     }
     
-    contract = web3.eth.contract(api).at(contract_address);
+    contract = web3.eth.contract(abi).at(contract_address);
 
     contract.getUserIdByAddress().call((error, result) => {
         if(error) {
