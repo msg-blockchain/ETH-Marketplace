@@ -575,18 +575,14 @@ window.addEventListener('load', async () => {
       console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
     }
     
+    //Set Contract
     contract = web3.eth.contract(abi).at(contract_address);
 
+    //Get User Address
     var user_account = web3.eth.accounts;
     console.log(user_account);
 
-    contract.balanceById(0).call((error, result) => {
-        if(!error) {
-            console.log(JSON.stringify(result));
-        }
-        else {
-            console.error(error);
-        }
-    });
+    //Get User Balance
+    contract.methods.balanceById(0).call().then(console.log);
 
 });
