@@ -551,6 +551,7 @@ const abi = [
 
 
 let contract;
+let web3Provider = new ethers.providers.Web3Provider(provider); 
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
     if (window.ethereum) {
