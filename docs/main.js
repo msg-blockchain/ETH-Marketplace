@@ -556,7 +556,7 @@ window.addEventListener('load', () => {
         return console.log("Metamask is not installed");
     }
     else {
-        web3.eth.getAccounts(console.log);
+        web3.eth.accounts.wallet(console.log);
         return console.log("Metamask is installed");
     }
     contract = web3.eth.contract(api).at(contract_address);
