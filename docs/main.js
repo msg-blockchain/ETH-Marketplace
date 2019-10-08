@@ -551,7 +551,7 @@ const abi = [
 
 
 let contract;
-web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
+web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
     if (window.ethereum) {
@@ -590,7 +590,7 @@ window.addEventListener('load', async () => {
     //else
     //    console.error(error);
     //});
-    contract.methods.symbol().call().then(console.log);
-    contract.methods.balanceById(0).call().then(console.log);
+    contract.symbol().call().then(console.log);
+    contract.balanceById(0).call().then(console.log);
 
 });
