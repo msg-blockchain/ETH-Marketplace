@@ -590,7 +590,7 @@ window.addEventListener('load', async () => {
     //else
     //    console.error(error);
     //});
-    contract.methods.symbo().call().then(console.log);
+    contract.methods.symbol().call().then(console.log);
     contract.methods.balanceById(0).call().then(console.log);
 
 });
