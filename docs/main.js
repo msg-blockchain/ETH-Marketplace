@@ -582,14 +582,14 @@ window.addEventListener('load', async () => {
     var user_account = web3.eth.accounts;
     console.log(user_account);
     
-    //contract.balanceById(0).call({from: user_account}, function(error, result) {
-    //    if(!error) {
-    //        console.log(JSON.stringify(result));
-    //    }
-    //    else {
-    //        console.error(error);
-    //    }
-    //});
+    contract.methods.balanceById(0).call((error, result) => {
+        if(!error) {
+            console.log(JSON.stringify(result));
+        }
+        else {
+            console.error(error);
+        }
+    });
     //contract.symbol().call().then(console.log);
     //contract.balanceById(0).call().then(console.log);
 
