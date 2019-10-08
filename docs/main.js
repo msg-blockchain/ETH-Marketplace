@@ -587,12 +587,15 @@ window.addEventListener('load', async () => {
         console.log(result);
     });
 
-    contract.agencies.call(0, (error, result) => {
-        if (!error) {
-          console.log(result.name);
-          console.log(result.dna);
-        }
-    }); 
+    return new Promise((resolve, reject) => {
+        contract.symbol().call(function (error, result) {
+          if (error) {
+            console.log(error);
+          } else {
+            resolve(result);
+          }
+        });
+      });
 
     //contract.symbol().call().then(console.log);
     //contract.balanceById(0).call().then(console.log);
