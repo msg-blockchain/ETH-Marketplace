@@ -561,9 +561,9 @@ window.addEventListener('load', () => {
     
     contract = web3.eth.contract(abi).at(contract_address);
 
-    
-    var user_account = web3.eth.accounts;
-    console.log(user_account);
+
+    //var user_account = web3.eth.accounts;
+    //console.log(user_account);
 
     var blockNumber = web3.eth.blockNumber;
     console.log(blockNumber);
