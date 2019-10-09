@@ -12,6 +12,7 @@ window.addEventListener('load', async () => {
     if (window.ethereum) {
         window.web3 = new Web3(ethereum);
         try {
+            window.web3 = new Web3(web3.currentProvider);
             console.log("a");
             await ethereum.enable();
             console.log("b");
