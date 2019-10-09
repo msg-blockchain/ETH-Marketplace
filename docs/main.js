@@ -30,21 +30,19 @@ var marketplace = web3.eth.contract(abi).at(contractAddress);
 
 //Get User Address
 var user_account = web3.eth.accounts;
-console.log(user_account);
 
-function getUserBalance(input) {
-    var user_balance = input;
-    console.log("Balance: " + user_balance);
+function getUserBalance() {
+    marketplace.balanceOf(user_account, function (error, result) {
+        if (!error) {
+            console.log(result);
+            document.write(user_balance);
+        }
+        else {
+            console.error(error);
+        }
+    });
 }
 
-marketplace.balanceOf(user_account, function (error, result) {
-    if (!error) {
-        console.log(result);
-        getUserBalance(result);
-    }
-    else {
-        console.error(error);
-    }
-});
+
 
 
