@@ -28,7 +28,7 @@ window.addEventListener('load', async () => {
 
 var marketplace = web3.eth.contract(abi).at(contractAddress);
 
-marketplace.symbol(function(error,result){
+var test = marketplace.symbol(function(error,result){
     if (!error)
     {
         console.log(result);
@@ -39,14 +39,13 @@ marketplace.symbol(function(error,result){
     }
 });
 
-console.log(web3.version);
+console.log(test);
 
 var user_balance;
 
 //Get User Address
 var user_account = web3.eth.accounts;
 console.log(user_account);
-
 
 /*
 Marketplace.methods.balanceOf(user_account).call(function (error, result) {
