@@ -10,10 +10,12 @@ window.addEventListener('load', async () => {
     if (window.ethereum) {
         window.web3 = new Web3(ethereum);
         try {
+            console.log("a");
             await ethereum.enable();
+            console.log("b");
             var marketplace = new web3.eth.Contract(abi,contractAddress);
-            marketplace.methods.symbol
-            .call(function(error,result){
+            console.log("0");
+            marketplace.methods.symbol.call(function(error,result){
                 if (! error)
                     console.log(result);
                 else
