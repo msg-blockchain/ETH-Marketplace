@@ -2,6 +2,7 @@ var abi = [{ "constant": true, "inputs": [], "name": "name", "outputs": [{ "inte
 
 var contractAddress = '0xF64082e10684885Cff685c20BD165Fc00b315fd6';
 
+window.ethereum.enable();
 
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
@@ -59,13 +60,13 @@ console.log(web3.version);
     }
 }); */
 
-
+var user_balance;
 
 /* //Get User Address
 var user_account = web3.eth.accounts;
 console.log(user_account);
 
-var user_balance;
+
 
 Marketplace.methods.balanceOf(user_account).call(function (error, result) {
     if (!error) {
