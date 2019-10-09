@@ -48,8 +48,8 @@ console.log(user_account);
 
 var user_balance = Marketplace.balanceOf(user_account, function (error, result) {
     if (!error) {
-        console.log(JSON.stringify(result));
-        return JSON.stringify(result);
+        console.log(result);
+        return result;
     }
     else {
         console.error(error);
