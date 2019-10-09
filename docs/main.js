@@ -13,7 +13,7 @@ var marketplaceContract = web3.eth.contract([{"constant":true,"inputs":[],"name"
 
 var Marketplace = marketplaceContract.at('0xF64082e10684885Cff685c20BD165Fc00b315fd6');
 
-web3.version.getNetwork((err, netId) => {
+/* web3.version.getNetwork((err, netId) => {
     switch (netId) {
       case "1":
         console.log('This is mainnet')
@@ -33,7 +33,7 @@ web3.version.getNetwork((err, netId) => {
       default:
         console.log('This is an unknown network.')
     }
-});
+}); */
 
 Marketplace.symbol(function(error, result){
     if(!error)
@@ -45,3 +45,23 @@ Marketplace.symbol(function(error, result){
      console.error(error);
     }
 });
+
+//Get User Address
+var user_account = web3.eth.accounts;
+console.log(user_account);
+
+var user_balance;
+
+Marketplace.balanceOf(user_account)(function(error, result){
+    if(!error)
+    {
+      console.log(result);
+      user_balance = result;
+    }
+    else
+    {
+     console.error(error);
+    }
+});
+
+console.log(user_balance);
