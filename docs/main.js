@@ -52,11 +52,11 @@ console.log(user_account);
 
 var user_balance;
 
-Marketplace.balanceOf(user_account)(function(error, result){
+Marketplace.balanceOf(user_account, function(error, result){
     if(!error)
     {
-      console.log(result);
-      user_balance = result;
+      console.log(JSON.stringify(result));
+      user_balance = JSON.stringify(result);
     }
     else
     {
