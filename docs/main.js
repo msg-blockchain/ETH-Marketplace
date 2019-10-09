@@ -55,4 +55,14 @@ Marketplace.methods.balanceOf(user_account).call(function (error, result) {
     }
 });
 
+Marketplace.methods.symbol().call(function (error, result) {
+    if (!error) {
+        console.log(result);
+    }
+    else {
+        console.error(error);
+    }
+});
+
+
 //console.log(user_balance);
