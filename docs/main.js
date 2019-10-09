@@ -35,14 +35,11 @@ function getUserBalance() {
     marketplace.balanceOf(user_account, function (error, result) {
         if (!error) {
             console.log(result);
-            document.write(user_balance);
+            x = JSON.parse(result) / (10 ** 12);
+            document.write(x);
         }
         else {
             console.error(error);
         }
     });
 }
-
-
-
-
