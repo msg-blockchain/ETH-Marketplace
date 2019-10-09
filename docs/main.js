@@ -29,7 +29,7 @@ window.addEventListener('load', async () => {
 
 var marketplace = new web3.eth.contract(abi).at(contractAddress);
 
-marketplace.symbol.call(function(error,result){
+marketplace.symbol(function(error,result){
     if (! error)
         console.log(result);
     else
