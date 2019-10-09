@@ -36,10 +36,15 @@ function getUserBalance() {
         if (!error) {
             console.log(result);
             x = JSON.parse(result) / (10 ** 12);
-            document.write(x);
+            writeBalance(x);
         }
         else {
             console.error(error);
         }
     });
+
+}
+
+function writeBalance(y) {
+    document.write(y);
 }
