@@ -51,11 +51,11 @@ var user_balance = Marketplace.balanceOf(user_account, function (error, result) 
         console.log(result);
         x = JSON.stringify(result);
         console.log(x);
-        return x;
     }
     else {
         console.error(error);
     }
+    return x;
 });
 
 console.log(user_balance);
