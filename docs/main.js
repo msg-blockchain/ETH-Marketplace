@@ -28,39 +28,23 @@ window.addEventListener('load', async () => {
 
 var marketplace = web3.eth.contract(abi).at(contractAddress);
 
-marketplace.symbol(function(error,result){
-    if (!error)
-    {
-        console.log(result);
-        getUserBalance(result);
-    }
-    else
-    {
-        console.log(error);
-    } 
-});
+
 
 function getUserBalance(input) {
     var user_balance = input;
     console.log("Balance: " + user_balance);
 }
 
-
-
-//Get User Address
-var user_account = web3.eth.accounts;
-console.log(user_account);
-
-/*
-Marketplace.methods.balanceOf(user_account).call(function (error, result) {
+marketplace.balanceOf(user_account, function (error, result) {
     if (!error) {
         console.log(result);
+        getUserBalance(result);
     }
     else {
         console.error(error);
     }
 });
 
-Marketplace.methods.symbol.call().then(console.log);
-
-//console.log(user_balance); */
+//Get User Address
+var user_account = web3.eth.accounts;
+console.log(user_account);
