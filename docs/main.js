@@ -11,10 +11,9 @@ window.addEventListener('load', async () => {
         try {
             await ethereum.enable();
             var accounts= await web3.eth.getAccounts();
-            var option={from: accounts[0] };
             var marketplace = new web3.eth.Contract(abi,contractAddress);
-            marketplace.methods.symbol()
-            .call(option,function(error,result){
+            marketplace.methods.symbol
+            .call(function(error,result){
                 if (! error)
                     console.log(result);
                 else
