@@ -555,54 +555,40 @@ const abi = [
 const desiredNetwork = '3';
 const contract = web3.eth.contract(abi).at(contract_address);
 
-window.addEventListener('load', async () => {
-    // Modern dapp browsers...
-    if (window.ethereum) {
-      window.web3 = new Web3(ethereum);
-      try {
-        // Request account access if needed
-        await ethereum.enable();
-        // Acccounts now exposed
-        web3.eth.sendTransaction({/* ... */});
-      } catch (error) {
-        // User denied account access...
-      }
-    }
-    // Legacy dapp browsers...
-    else if (window.web3) {
-      window.web3 = new Web3(web3.currentProvider);
-      // Acccounts always exposed
-      web3.eth.sendTransaction({/* ... */});
-    }
-    // Non-dapp browsers...
-    else {
-      console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
-    }
+if (typeof web3 !== 'undefined')
+{
+	web3 = new Web3(web3.currentProvider);
+} 
+else {
+	// set the provider you want from Web3.providers
+	web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+};
 
-    //Get User Address
-    var user_account = web3.eth.accounts;
-    console.log(user_account);
-    
-    web3.eth.getBalance(web3.eth.accounts[0], (err, wei) => {
-        console.log('le balance est ' + web3.fromWei(wei, 'ether'))
-      });
+web3.eth.defaultAccount = web3.eth.accounts[0];
+ethereum.autoRefreshOnNetworkChange = false;
 
-      var result = contract.owner.call((error, result) => {
-        console.log(result);
-    });
+//Get User Address
+var user_account = web3.eth.accounts;
+console.log(user_account);
 
-    var test1 = new Promise((resolve, reject) => {
-        contract.symbol().call(function (error, result) {
-          if (error) {
-            console.log(error);
-          } else {
-            resolve(result);
-          }
-        });
-      });
+web3.eth.getBalance(web3.eth.accounts[0], (err, wei) => {
+	console.log('le balance est ' + web3.fromWei(wei, 'ether'))
+});
 
-    console.log(test1);
+var result = contract.owner.call((error, result) => {
+	console.log(result);
+});
+
+var test1 = new Promise((resolve, reject) => {
+	contract.symbol().call(function (error, result) {
+		if (error) {
+			console.log(error);
+		} else {
+			resolve(result);
+		}
+	});
+});
+
+console.log(test1);
     //contract.symbol().call().then(console.log);
     //contract.balanceById(0).call().then(console.log);
-
-});
