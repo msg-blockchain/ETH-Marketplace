@@ -1,4 +1,4 @@
-import Web3 from 'web3';
+src = 'https://github.com/ethereum/web3.js/blob/1.x/packages/web3/src/index.js';
 
 if (typeof web3 !== 'undefined') {
     web3 = new Web3(web3.currentProvider);
