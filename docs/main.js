@@ -2,6 +2,7 @@ var abi = [{ "constant": true, "inputs": [], "name": "name", "outputs": [{ "inte
 
 var contractAddress = '0xF64082e10684885Cff685c20BD165Fc00b315fd6';
 
+ethereum.autoRefreshOnNetworkChange = false;
 window.ethereum.enable();
 
 window.addEventListener('load', async () => {
@@ -18,6 +19,7 @@ window.addEventListener('load', async () => {
                 else
                     console.log(error);
             });
+            console.log("1");
         } catch (error) {
             // User denied account access...
         }
