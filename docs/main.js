@@ -32,19 +32,20 @@ marketplace.symbol(function(error,result){
     if (!error)
     {
         console.log(result);
+        getUserBalance(result);
     }
     else
     {
         console.log(error);
-    }
-    getUserBalance(result);
+    } 
 });
 
 function getUserBalance(input) {
     var user_balance = input;
+    console.log("Balance: " + user_balance);
 }
 
-console.log(user_balance);
+
 
 //Get User Address
 var user_account = web3.eth.accounts;
