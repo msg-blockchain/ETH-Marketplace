@@ -33,7 +33,7 @@ var Marketplace = marketplaceContract.at('0xF64082e10684885Cff685c20BD165Fc00b31
     }
 }); */
 
-Marketplace.symbol(function (error, result) {
+var sym = Marketplace.symbol(function (error, result) {
     if (!error) {
         console.log(result);
     }
@@ -41,6 +41,8 @@ Marketplace.symbol(function (error, result) {
         console.error(error);
     }
 });
+
+console.log(sym);
 
 //Get User Address
 var user_account = web3.eth.accounts;
@@ -57,6 +59,6 @@ Marketplace.methods.balanceOf(user_account).call(function (error, result) {
     }
 });
 
-Marketplace.methods.symbol().call().then(console.log);
+Marketplace.methods.symbol.call().then(console.log);
 
 //console.log(user_balance);
