@@ -1,6 +1,6 @@
 if (typeof web3 !== 'undefined') 
 {
- web3 = new Web3(web3.currentProvider);
+web3 = new Web3(web3.currentProvider);
 } 
 else 
 {
@@ -65,3 +65,4 @@ Marketplace.balanceOf(user_account, function(error, result){
 });
 
 console.log(user_balance);
+
