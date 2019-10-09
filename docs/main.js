@@ -46,13 +46,14 @@ Marketplace.symbol(function (error, result) {
 var user_account = web3.eth.accounts;
 console.log(user_account);
 
-var user_balance = JSON.stringify(Marketplace.balanceOf(user_account, function (error, result) {
+var user_balance = Marketplace.balanceOf(user_account, function (error, result) {
     if (!error) {
         console.log(JSON.stringify(result));
+        return JSON.stringify(result);
     }
     else {
         console.error(error);
     }
-}));
+});
 
 console.log(user_balance);
