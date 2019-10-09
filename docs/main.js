@@ -10,7 +10,6 @@ window.addEventListener('load', async () => {
         window.web3 = new Web3(ethereum);
         try {
             await ethereum.enable();
-            var accounts= await web3.eth.getAccounts();
             var marketplace = new web3.eth.Contract(abi,contractAddress);
             marketplace.methods.symbol
             .call(function(error,result){
