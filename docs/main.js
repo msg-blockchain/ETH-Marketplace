@@ -28,7 +28,9 @@ window.addEventListener('load', async () => {
 
 var marketplace = web3.eth.contract(abi).at(contractAddress);
 
-
+//Get User Address
+var user_account = web3.eth.accounts;
+console.log(user_account);
 
 function getUserBalance(input) {
     var user_balance = input;
@@ -45,6 +47,4 @@ marketplace.balanceOf(user_account, function (error, result) {
     }
 });
 
-//Get User Address
-var user_account = web3.eth.accounts;
-console.log(user_account);
+
