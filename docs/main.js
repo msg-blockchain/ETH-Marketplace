@@ -13,7 +13,7 @@ window.addEventListener('load', async () => {
             console.log("a");
             await ethereum.enable();
             console.log("b");
-            var marketplace = new web3.eth.Contract(abi,contractAddress);
+            var marketplace = new web3.eth.contract(abi).at(contractAddress);
             console.log("0");
             marketplace.symbol.call(function(error,result){
                 if (! error)
