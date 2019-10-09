@@ -10,18 +10,7 @@ window.addEventListener('load', async () => {
     if (window.ethereum) {
         window.web3 = new Web3(ethereum);
         try {
-            console.log("a");
             await ethereum.enable();
-            console.log("b");
-            var marketplace = new web3.eth.contract(abi).at(contractAddress);
-            console.log("0");
-            marketplace.symbol.call(function(error,result){
-                if (! error)
-                    console.log(result);
-                else
-                    console.log(error);
-            });
-            console.log("1");
         } catch (error) {
             // User denied account access...
         }
@@ -36,6 +25,15 @@ window.addEventListener('load', async () => {
     else {
         console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
     }
+});
+
+var marketplace = new web3.eth.contract(abi).at(contractAddress);
+
+marketplace.symbol.call(function(error,result){
+    if (! error)
+        console.log(result);
+    else
+        console.log(error);
 });
 
 console.log(web3.version);
@@ -64,12 +62,12 @@ console.log(web3.version);
 
 var user_balance;
 
-/* //Get User Address
+//Get User Address
 var user_account = web3.eth.accounts;
 console.log(user_account);
 
 
-
+/*
 Marketplace.methods.balanceOf(user_account).call(function (error, result) {
     if (!error) {
         console.log(result);
