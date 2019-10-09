@@ -46,6 +46,8 @@ Marketplace.symbol(function (error, result) {
 var user_account = web3.eth.accounts;
 console.log(user_account);
 
+var user_balance;
+
 Marketplace.methods.balanceOf(user_account).call(function (error, result) {
     if (!error) {
         console.log(result);
@@ -55,14 +57,6 @@ Marketplace.methods.balanceOf(user_account).call(function (error, result) {
     }
 });
 
-Marketplace.methods.symbol().call(function (error, result) {
-    if (!error) {
-        console.log(result);
-    }
-    else {
-        console.error(error);
-    }
-});
-
+Marketplace.methods.symbol().call().then(console.log);
 
 //console.log(user_balance);
