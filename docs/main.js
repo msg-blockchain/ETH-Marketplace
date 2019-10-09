@@ -37,8 +37,12 @@ var test = marketplace.symbol(function(error,result){
     {
         console.log(error);
     }
+    var x = result;
+    console.log(x);
+    return x;
 });
 
+console.log("x: " + x);
 console.log(test);
 
 var user_balance;
