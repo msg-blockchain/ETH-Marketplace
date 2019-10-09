@@ -3,7 +3,6 @@ var abi = [{ "constant": true, "inputs": [], "name": "name", "outputs": [{ "inte
 var contractAddress = '0xF64082e10684885Cff685c20BD165Fc00b315fd6';
 
 ethereum.autoRefreshOnNetworkChange = false;
-window.ethereum.enable();
 
 window.addEventListener('load', async () => {
     // Modern dapp browsers...
@@ -27,38 +26,20 @@ window.addEventListener('load', async () => {
     }
 });
 
-var marketplace = new web3.eth.contract(abi).at(contractAddress);
+var marketplace = web3.eth.contract(abi).at(contractAddress);
 
 marketplace.symbol(function(error,result){
-    if (! error)
+    if (!error)
+    {
         console.log(result);
+    }
     else
+    {
         console.log(error);
+    }
 });
 
 console.log(web3.version);
-
-/* web3.version.getNetwork((err, netId) => {
-    switch (netId) {
-      case "1":
-        console.log('This is mainnet')
-        break
-      case "2":
-        console.log('This is the deprecated Morden test network.')
-        break
-      case "3":
-        console.log('This is the ropsten test network.')
-        break
-      case "4":
-        console.log('This is the Rinkeby test network.')
-        break
-      case "42":
-        console.log('This is the Kovan test network.')
-        break
-      default:
-        console.log('This is an unknown network.')
-    }
-}); */
 
 var user_balance;
 
