@@ -33,5 +33,15 @@ web3.version.getNetwork((err, netId) => {
       default:
         console.log('This is an unknown network.')
     }
-  });
+});
 
+Marketplace.symbol(function(error, result){
+    if(!error)
+    {
+      console.log(result);
+    }
+    else
+    {
+     console.error(error);
+    }
+});
