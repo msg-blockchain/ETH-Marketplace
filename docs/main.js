@@ -51,7 +51,7 @@ window.addEventListener('load', async () => {
                     orderCount = JSON.parse(result);
                     
                     for (i=0; i <= orderCount; i++) {
-                        marketplace.orderCount(i, function (error, result) {
+                        marketplace.allOrders(i, function (error, result) {
                             if (!error) {
                                 console.log(result);
                             }
