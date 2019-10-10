@@ -36,7 +36,7 @@ window.addEventListener('load', async () => {
                 console.log(amount);
                 console.log(eth_amount);
 
-                marketplace.buyTokens({value: eth_amount, gas: 30000}, function (error, result) {
+                marketplace.buyTokens({value: eth_amount, gas: 30000000}, function (error, result) {
                     if (!error) {
                         console.log(JSON.stringify(result));
                     }
