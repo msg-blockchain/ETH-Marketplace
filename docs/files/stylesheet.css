@@ -42,7 +42,7 @@
 .text_input {
     position: absolute;
     overflow: visible;
-    width: 520px;
+    width: 500px;
     height: 50px;
     font-size: 32px;
     color: dimgrey;

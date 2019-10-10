@@ -29,10 +29,10 @@
 			<span>Costs in ETH</span>
 		</div>
 		<form class="small_text">
-			<input oninput="x.value=parseInt(a.value)/1000000" class="number_input" type="number" id="a" min="1" max="1000000000000"
+			<input oninput="x.value=parseInt(buy_amount.value)/1000000" class="number_input" type="number" id="buy_amount" min="1" max="1000000000000"
 				step="100" style="position: absolute; left: 240px; top: 490px;">
 			</input>
-			<output name="x" for="a" class="number_output" style="position: absolute; left: 560px; top: 490px;">
+			<output name="x" for="buy_amount" class="number_output" style="position: absolute; left: 560px; top: 490px;">
 			</output>
 		</form>
 		<a href="index.html">
@@ -47,7 +47,7 @@
 			</button>
 		</a>
 		<a href="index.html">
-			<button class="next">
+			<button id='buy_button' class="next">
 				<div class="continue">
 					<span>buy</span>
 				</div>

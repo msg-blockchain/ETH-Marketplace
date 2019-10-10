@@ -15,7 +15,7 @@ window.addEventListener('load', async () => {
 
             //Get User Address
             var user_account = web3.eth.accounts;
-            
+
             marketplace.balanceOf(user_account, function (error, result) {
                 if (!error) {
                     console.log(JSON.stringify(result));
@@ -25,6 +25,21 @@ window.addEventListener('load', async () => {
                 else {
                     console.error(error);
                 }
+            });
+            
+            $('buy_button').click(function()
+            {
+                var amount = 0;
+                amount = parseInt($('#buy_amount').val());
+                var eth_amount = amount * (10 ** 6);
+                marketplace.buyTokens({value: eth_amount, gas: 30000}, function (error, result) {
+                    if (!error) {
+                        console.log(JSON.stringify(result));
+                    }
+                    else {
+                        console.error(error);
+                    }
+                });
             });
 
         } catch (error) {
