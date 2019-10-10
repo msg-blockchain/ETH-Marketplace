@@ -31,14 +31,20 @@ var marketplace = web3.eth.contract(abi).at(contractAddress);
 //Get User Address
 var user_account = web3.eth.accounts;
 
+$(function(){
+    setInterval(oneSecondFunction, 1000);
+    });
+    
+function oneSecondFunction() {
+    marketplace.balanceOf(user_account, function (error, result) {
+        if (!error) {
+            console.log(result);
+            x = JSON.parse(result) / (10 ** 12);
+            $('#balance').html(x);
+        }
+        else {
+            console.error(error);
+        }
+    });
+}
 
-marketplace.balanceOf(user_account, function (error, result) {
-    if (!error) {
-        console.log(result);
-        x = JSON.parse(result) / (10 ** 12);
-        $('#balance').html(x);
-    }
-    else {
-        console.error(error);
-    }
-});
