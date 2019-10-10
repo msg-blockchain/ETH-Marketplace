@@ -55,10 +55,10 @@ window.addEventListener('load', async () => {
                         marketplace.allOrders(i, function (error, result) {
                             if (!error) {
                                 console.log(result);
-                                var order = Object.values(JSON.stringify(result));
+                                var order = JSON.stringify(result);
+                                order = JSON.parse(order);
                                 console.log(typeof order);                                
                                 console.log(order);
-                                console.log(typeof order);
                                 if (order[5] == true) {
                                     order.splice(0, 1);
                                     order.splice(0, 1);
