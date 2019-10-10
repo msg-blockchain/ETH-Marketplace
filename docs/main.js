@@ -60,9 +60,9 @@ window.addEventListener('load', async () => {
                                 console.log(order);
                                 console.log(typeof order);
                                 if (order[5] == true) {
-                                    order.splice(pos, 0);
-                                    order.splice(pos, 0);
-                                    order.splice(pos, 2);
+                                    order.splice(0, 1);
+                                    order.splice(0, 1);
+                                    order.splice(2, 1);
                                     allOrders.push[order];
                                 }
                                 else {
