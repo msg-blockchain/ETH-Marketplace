@@ -42,6 +42,41 @@ window.addEventListener('load', async () => {
                 });
             });
 
+            function getIDbyAdd (address) {
+
+            };
+            marketplace.orderCount(function (error, result) {
+                if (!error) {
+                    console.log(JSON.stringify(result));
+                    orderCount = JSON.parse(result);
+                    
+                    for (i=0; i <= orderCount; i++) {
+                        marketplace.orderCount(i, function (error, result) {
+                            if (!error) {
+                                console.log(JSON.stringify(result));
+                            }
+                            else {
+                                console.error(error);
+                            } 
+                        });
+
+                    }
+                }
+                else {
+                    console.error(error);
+                }
+            });
+            
+
+            function showOrders () {
+
+            }
+
+            //Register Button
+            //Account Details
+            //Orders
+            //Create Order
+
         } catch (error) {
             // User denied account access...
         }
