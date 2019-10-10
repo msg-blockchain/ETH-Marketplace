@@ -56,6 +56,7 @@ window.addEventListener('load', async () => {
                             if (!error) {
                                 console.log(result);                                
                                 var order = JSON.stringify(result);
+                                console.log(order);
                                 var order = JSON.parse(result);
                                 console.log(order);
                                 console.log(typeof order);
