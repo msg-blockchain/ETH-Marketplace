@@ -31,7 +31,7 @@ var marketplace = web3.eth.contract(abi).at(contractAddress);
 //Get User Address
 var user_account = web3.eth.accounts;
 
-location.reload(true);
+
 
 $(function(){
     setInterval(timerFunction, 5000);
@@ -49,4 +49,6 @@ function timerFunction() {
         }
     });
 }
+
+function timerFunction() {location.reload(true);};
 
