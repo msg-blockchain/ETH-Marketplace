@@ -53,7 +53,7 @@ window.addEventListener('load', async () => {
                     for (i=0; i <= orderCount; i++) {
                         marketplace.orderCount(i, function (error, result) {
                             if (!error) {
-                                console.log(JSON.stringify(result));
+                                console.log(result);
                             }
                             else {
                                 console.error(error);
