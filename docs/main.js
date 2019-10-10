@@ -32,7 +32,7 @@ var marketplace = web3.eth.contract(abi).at(contractAddress);
 var user_account = web3.eth.accounts;
 
 $(function(){
-    setInterval(oneSecondFunction, 1000);
+    setInterval(oneSecondFunction, 5000);
     });
     
 function oneSecondFunction() {
