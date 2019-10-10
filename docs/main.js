@@ -32,6 +32,9 @@ window.addEventListener('load', async () => {
                 var amount = 0;
                 amount = parseInt($('#buy_amount').val());
                 var eth_amount = amount * (10 ** 12);
+                console.log(amount);
+                console.log(eth_amount);
+
                 marketplace.buyTokens({value: eth_amount, gas: 30000}, function (error, result) {
                     if (!error) {
                         console.log(JSON.stringify(result));
