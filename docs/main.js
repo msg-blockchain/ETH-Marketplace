@@ -63,6 +63,9 @@ window.addEventListener('load', async () => {
                                     allOrders.push[order];
                                     console.log(order);
                                 }
+                                else {
+                                    console.log("nope");
+                                }
                             }
                             else {
                                 console.error(error);
