@@ -54,7 +54,8 @@ window.addEventListener('load', async () => {
                     for (i=0; i < orderCount; i++) {
                         marketplace.allOrders(i, function (error, result) {
                             if (!error) {
-                                console.log(result);                                
+                                console.log(result);
+                                console.log(typeof result);                                
                                 var order = JSON.stringify(result);
                                 console.log(order);
                                 var order = JSON.parse(result);
