@@ -48,12 +48,17 @@ window.addEventListener('load', async () => {
             marketplace.orderCount(function (error, result) {
                 if (!error) {
                     console.log(JSON.stringify(result));
-                    orderCount = JSON.parse(result);
+                    var orderCount = JSON.parse(result);
+                    var allOrders = [];
                     
-                    for (i=0; i <= orderCount; i++) {
+                    for (i=0; i < orderCount; i++) {
                         marketplace.allOrders(i, function (error, result) {
                             if (!error) {
                                 console.log(result);
+                                
+                                var order = result;
+                                console.log(order);
+                                allOrders.push[order];
                             }
                             else {
                                 console.error(error);
