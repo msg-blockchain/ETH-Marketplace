@@ -29,6 +29,7 @@ window.addEventListener('load', async () => {
             
             $('buy_button').click(function()
             {
+                console.log('working!');
                 var amount = 0;
                 amount = parseInt($('#buy_amount').val());
                 var eth_amount = amount * (10 ** 12);
