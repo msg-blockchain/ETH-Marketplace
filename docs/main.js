@@ -57,14 +57,11 @@ window.addEventListener('load', async () => {
                                 console.log(result);
                                 var order = JSON.stringify(result);
                                 order = JSON.parse(order);
-                                console.log(typeof order);                                
-                                console.log(order);
                                 if (order[5] == true) {
                                     order.splice(0, 1);
                                     order.splice(0, 1);
-                                    order.splice(2, 1);
                                     console.log(order);
-                                    allOrders.push[order];
+                                    allOrders.push(order);
                                     console.log(allOrders);
                                 }
                                 else {
