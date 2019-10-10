@@ -61,6 +61,7 @@ window.addEventListener('load', async () => {
                                     order.splice[pos, 0];
                                     order.splice[pos, 2];
                                     allOrders.push[order];
+                                    console.log(order);
                                 }
                             }
                             else {
