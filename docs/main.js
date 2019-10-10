@@ -54,12 +54,14 @@ window.addEventListener('load', async () => {
                     for (i=0; i < orderCount; i++) {
                         marketplace.allOrders(i, function (error, result) {
                             if (!error) {
-                                console.log(result);
-                                console.log(JSON.stringify(result));
-                                
-                                var order = result;
-                                console.log(order);
-                                allOrders.push[order];
+                                console.log(result);                                
+                                var order = JSON.stringify(result);
+                                if (order[5] == true) {
+                                    order.splice[pos, 0];
+                                    order.splice[pos, 0];
+                                    order.splice[pos, 2];
+                                    allOrders.push[order];
+                                }
                             }
                             else {
                                 console.error(error);
@@ -67,6 +69,7 @@ window.addEventListener('load', async () => {
                         });
 
                     }
+                    console.log(allOrders);
                 }
                 else {
                     console.error(error);
