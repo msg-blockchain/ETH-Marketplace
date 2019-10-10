@@ -15,23 +15,18 @@ window.addEventListener('load', async () => {
 
             //Get User Address
             var user_account = web3.eth.accounts;
-
-            $(function(){
-                setInterval(timerFunction, 5000);
+            
+            marketplace.balanceOf(user_account, function (error, result) {
+                if (!error) {
+                    console.log(JSON.stringify(result));
+                    x = JSON.parse(result) / (10 ** 12);
+                    $('#balance').html(x);
+                }
+                else {
+                    console.error(error);
+                }
             });
 
-            function timerFunction() {
-                marketplace.balanceOf(user_account, function (error, result) {
-                    if (!error) {
-                        console.log(JSON.stringify(result));
-                        x = JSON.parse(result) / (10 ** 12);
-                        $('#balance').html(x);
-                    }
-                    else {
-                        console.error(error);
-                    }
-                });
-            };
         } catch (error) {
             // User denied account access...
         }
