@@ -27,7 +27,7 @@ window.addEventListener('load', async () => {
                 }
             });
             
-            $('buy_button').click(function()
+            $('#buy_button').click(function()
             {
                 console.log('working!');
                 var amount = 0;
