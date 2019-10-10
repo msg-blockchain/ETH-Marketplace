@@ -36,6 +36,7 @@ $(function(){
 });
 
 function timerFunction() {
+    location.reload(true),
     marketplace.balanceOf(user_account, function (error, result) {
         if (!error) {
             console.log(JSON.stringify(result));
@@ -47,6 +48,4 @@ function timerFunction() {
         }
     });
 };
-
-function timerFunction() {(location.reload(true));};
 
