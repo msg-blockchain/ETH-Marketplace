@@ -101,7 +101,7 @@
     position: absolute;
     overflow: visible;
     width: 600px;
-    height: 720px;
+    height: 700px;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     top: 50%;
@@ -416,10 +416,10 @@
 
 .scroll_area {
       position: absolute;
-      top: 240px;
+      top: 210px;
       left: 240px;
       overflow: scroll;
-      height: 500px;
+      height: 490px;
       width: 520px;
   }
 
