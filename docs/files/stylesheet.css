@@ -414,10 +414,10 @@
     transform: translateY(-50%);
   }
 
-  .scroll_area {
+.scroll_area {
       position: absolute;
       top: 270px;
-      left: 270px;
+      left: 240px;
       overflow: scroll;
       height: 500px;
       width: 520px;
