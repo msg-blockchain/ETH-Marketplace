@@ -102,13 +102,12 @@ window.addEventListener('load', async () => {
                 }
             });
 
-
-            function showOrders() {
-
-            }
-
-            //Register Button
+            //TODO---------------------------------------
+            //Automatically go to Register site if user is not registered
+            //Register Functionality
             //Create Order
+            //Order Details
+            //Load sign on button -> events
 
         } catch (error) {
             // User denied account access...

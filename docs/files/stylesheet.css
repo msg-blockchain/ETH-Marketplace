@@ -416,10 +416,10 @@
 
 .scroll_area {
       position: absolute;
-      top: 180px;
+      top: 140px;
       left: 240px;
       overflow: scroll;
-      height: 510px;
+      height: 520px;
       width: 520px;
   }
 
