@@ -54,7 +54,6 @@ window.addEventListener('load', async () => {
                     for (i=0; i < orderCount; i++) {
                         marketplace.allOrders(i, function (error, result) {
                             if (!error) {
-                                console.log(result);
                                 var order = JSON.stringify(result);
                                 order = JSON.parse(order);
                                 if (order[5] == true) {
@@ -89,7 +88,7 @@ window.addEventListener('load', async () => {
                         var recent_price = allOrders[i][0] / (10 ** 12);
                         var y_pos = 270 + i * 100;
 
-                        var recent_order = "<a href='Order_Details.html'><button class='marketplace_order_box' style='position: absolute; left: 240px; top: ';
+                        var recent_order = "<a href='Order_Details.html'><button class='marketplace_order_box' style='position: absolute; left: 240px; top: '";
                         recent_order += y_pos.toString();
                         recent_order += "px;'</svg><div class='marketplace_order_box_text'><span>";
                         recent_order += recent_name.toString();
