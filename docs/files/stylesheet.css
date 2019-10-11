@@ -78,9 +78,18 @@
 }
 
 .main_frame {
-
+    position: absolute;
+    box-sizing: border-box;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
     background: #E5E5E5;
-
+    width: 700px;
+    height: 720px;
+    background-color: rgba(255,255,255,1);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .box {
