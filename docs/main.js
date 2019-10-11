@@ -68,14 +68,14 @@ window.addEventListener('load', async () => {
                                 if (counter == final_order) {                
                                     for (i=0; i<table_length; i++) {
                                         var recent_name = allOrders[count][0];
-                                        var recent_order_type = allOrders[count][0];
+                                        var recent_order_type = allOrders[count][1];
                                         if (recent_order_type == true) {
                                             recent_order_type_text = "<div class='sell_order_tag'><span>Sell</span></div>";
                                         }
                                         else {
                                             recent_order_type_text = "<div class='buy_order_tag'><span>Buy</span></div>";
                                         }
-                                        var recent_price = parseInt(allOrders[count][0]);
+                                        var recent_price = parseInt(allOrders[count][3] / (10 ** 12));
                                         var y_pos = 270 + (count * 100);
                                         var recent_order = "<a href='Order_Details.html'><button class='marketplace_order_box' style='position: absolute; top: '";
                                         recent_order += y_pos.toString();
