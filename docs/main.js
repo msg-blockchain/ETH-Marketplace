@@ -49,10 +49,13 @@ window.addEventListener('load', async () => {
                     var allOrders = [];
                     var table_length = 0;
                     var final_order = orderCount - 1;
+                    var order_table = "";
+                    var counter = 0;
                     
                     for (i=0; i < orderCount; i++) {
                         marketplace.allOrders(i, function (error, result) {
                             if (!error) {
+                                counter += 1;
                                 var order = JSON.stringify(result);
                                 order = JSON.parse(order);
                                 if (order[5] == true) {
@@ -63,11 +66,10 @@ window.addEventListener('load', async () => {
                                 }
                                 console.log(allOrders);
                                 console.log(i);
-                                if (i == final_order) {
+                                if (counter == final_order) {
                                     console.log(table_length);
                                     console.log(allOrders);
-                                    var order_table = "";
-
+                                    
                                     for (i=0; i<table_length; i++) {
                                         var recent_name = allOrders[i][0];
                                         var recent_order_type = allOrders[i][0];
