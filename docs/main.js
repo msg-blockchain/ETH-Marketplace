@@ -75,7 +75,7 @@ window.addEventListener('load', async () => {
 
                     for (i=0; i<table_length; i++) {
                         var recent_name = allOrders[i][0];
-                        var recent_order_type = allOrders[i][0];;
+                        var recent_order_type = allOrders[i][0];
                         if (recent_order_type == true) {
                             recent_order_type_text = "<div class='sell_order_tag'><span>Sell</span></div>";
                         }
@@ -84,7 +84,7 @@ window.addEventListener('load', async () => {
                         }
                         var recent_price = allOrders[i][0] / (10 ** 12);
                         var y_pos = 270 + i * 100;
-
+                        console.log("dakdm");
                         var recent_order = "<a href='Order_Details.html'><button class='marketplace_order_box' style='position: absolute; left: 240px; top: '";
                         recent_order += y_pos.toString();
                         recent_order += "px;'</svg><div class='marketplace_order_box_text'><span>";
