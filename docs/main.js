@@ -26,13 +26,12 @@ window.addEventListener('load', async () => {
                     console.error(error);
                 }
             });
-            
-            $('#buy_button').click(function()
-            {
+
+            $('#buy_button').click(function () {
                 var amount = 0;
                 amount = parseInt($('#buy_amount').val());
                 var eth_amount = amount * (10 ** 12);
-                marketplace.buyTokens({value: eth_amount, gas: 300000, gasPrice: 40000000000}, function (error, result) {
+                marketplace.buyTokens({ value: eth_amount, gas: 300000, gasPrice: 40000000000 }, function (error, result) {
                     if (!error) {
                         console.log(JSON.stringify(result));
                     }
@@ -51,8 +50,8 @@ window.addEventListener('load', async () => {
                     var final_order = orderCount;
                     var order_table = "";
                     var counter = 0;
-                    
-                    for (i=0; i < orderCount; i++) {
+
+                    for (i = 0; i < orderCount; i++) {
                         marketplace.allOrders(i, function (error, result) {
                             if (!error) {
                                 counter += 1;
@@ -64,10 +63,9 @@ window.addEventListener('load', async () => {
                                     allOrders.push(order);
                                     table_length += 1;
                                 }
-                                console.log(allOrders);
                                 var count = 0;
-                                if (counter == final_order) {                
-                                    for (i=0; i<table_length; i++) {
+                                if (counter == final_order) {
+                                    for (i = 0; i < table_length; i++) {
                                         var recent_name = allOrders[count][0];
                                         var recent_order_type = allOrders[count][1];
                                         if (recent_order_type == true) {
@@ -90,23 +88,22 @@ window.addEventListener('load', async () => {
                                         order_table += recent_order;
                                         $('#orders').html(order_table);
                                         count += 1;
-                                        console.log(order_table);
                                     }
                                 }
                             }
                             else {
                                 console.error(error);
-                            }  
+                            }
                         });
-                    }  
+                    }
                 }
                 else {
                     console.error(error);
                 }
             });
-            
 
-            function showOrders () {
+
+            function showOrders() {
 
             }
 
@@ -123,7 +120,7 @@ window.addEventListener('load', async () => {
     else if (window.web3) {
         window.web3 = new Web3(web3.currentProvider);
         // Acccounts always exposed
-        web3.eth.sendTransaction({/* ... */});
+        web3.eth.sendTransaction({/* ... */ });
     }
     // Non-dapp browsers...
     else {
