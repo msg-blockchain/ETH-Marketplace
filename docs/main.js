@@ -56,8 +56,7 @@ window.addEventListener('load', async () => {
                                 var order = JSON.stringify(result);
                                 order = JSON.parse(order);
                                 if (order[5] == true) {
-                                    order.splice(0, 1);
-                                    order.splice(0, 1);
+                                    order.splice(0, 2);
                                     allOrders.push(order);
                                     table_length += 1;
                                 }
