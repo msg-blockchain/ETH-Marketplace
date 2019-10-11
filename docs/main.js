@@ -108,8 +108,6 @@ window.addEventListener('load', async () => {
             }
 
             //Register Button
-            //Account Details
-            //Orders
             //Create Order
 
         } catch (error) {
