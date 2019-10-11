@@ -48,7 +48,7 @@ window.addEventListener('load', async () => {
                     var orderCount = JSON.parse(result);
                     var allOrders = [];
                     var table_length = 0;
-                    var final_order = orderCount - 1;
+                    var final_order = orderCount;
                     var order_table = "";
                     var counter = 0;
                     
@@ -77,7 +77,7 @@ window.addEventListener('load', async () => {
                                             recent_order_type_text = "<div class='buy_order_tag'><span>Buy</span></div>";
                                         }
                                         var recent_price = parseInt(allOrders[count][2] / (10 ** 12));
-                                        var y_pos = 270 + (count * 100);
+                                        var y_pos = count * 100;
                                         var recent_order = "<a href='Order_Details.html'><button class='marketplace_order_box' style='top: ";
                                         recent_order += y_pos.toString();
                                         recent_order += "px;'><div class='marketplace_order_box_text'><span>";
