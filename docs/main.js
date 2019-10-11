@@ -42,9 +42,6 @@ window.addEventListener('load', async () => {
                 });
             });
 
-            function getIDbyAdd (address) {
-
-            };
             marketplace.orderCount(function (error, result) {
                 if (!error) {
                     console.log(JSON.stringify(result));
@@ -74,7 +71,7 @@ window.addEventListener('load', async () => {
 
                     console.log(allOrders);
                     var table_length = allOrders.length;
-                    var order_table;
+                    var order_table = "";
 
                     for (i=0; i<table_length; i++) {
                         var recent_name = allOrders[i][0];
@@ -100,6 +97,7 @@ window.addEventListener('load', async () => {
 
                         console.log(recent_order);
                         order_table += recent_order;
+                        console.log(order_table);
                     }
                     
                 }
