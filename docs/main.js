@@ -64,41 +64,40 @@ window.addEventListener('load', async () => {
                             }
                             else {
                                 console.error(error);
-                            } 
+                            }
+                            
+                            console.log(table_length);
+                            console.log(allOrders);
+                            var order_table = "";
+        
+                            for (i=0; i<table_length; i++) {
+                                var recent_name = allOrders[i][0];
+                                var recent_order_type = allOrders[i][0];
+                                if (recent_order_type == true) {
+                                    recent_order_type_text = "<div class='sell_order_tag'><span>Sell</span></div>";
+                                }
+                                else {
+                                    recent_order_type_text = "<div class='buy_order_tag'><span>Buy</span></div>";
+                                }
+                                var recent_price = allOrders[i][0] / (10 ** 12);
+                                var y_pos = 270 + i * 100;
+                                console.log("dakdm");
+                                var recent_order = "<a href='Order_Details.html'><button class='marketplace_order_box' style='position: absolute; left: 240px; top: '";
+                                recent_order += y_pos.toString();
+                                recent_order += "px;'</svg><div class='marketplace_order_box_text'><span>";
+                                recent_order += recent_name.toString();
+                                recent_order += "</span></div><div class='price_tag'><span>";
+                                recent_order += recent_price.toString();
+                                recent_order += "</span></div>";
+                                recent_order += recent_order_type_text;
+                                recent_order += "</svg></button></a>";
+        
+                                console.log(recent_order);
+                                order_table += recent_order;
+                                console.log(order_table);
+                            }
                         });
-
-                    }
-                    console.log(table_length);
-                    console.log(allOrders);
-                    var order_table = "";
-
-                    for (i=0; i<table_length; i++) {
-                        var recent_name = allOrders[i][0];
-                        var recent_order_type = allOrders[i][0];
-                        if (recent_order_type == true) {
-                            recent_order_type_text = "<div class='sell_order_tag'><span>Sell</span></div>";
-                        }
-                        else {
-                            recent_order_type_text = "<div class='buy_order_tag'><span>Buy</span></div>";
-                        }
-                        var recent_price = allOrders[i][0] / (10 ** 12);
-                        var y_pos = 270 + i * 100;
-                        console.log("dakdm");
-                        var recent_order = "<a href='Order_Details.html'><button class='marketplace_order_box' style='position: absolute; left: 240px; top: '";
-                        recent_order += y_pos.toString();
-                        recent_order += "px;'</svg><div class='marketplace_order_box_text'><span>";
-                        recent_order += recent_name.toString();
-                        recent_order += "</span></div><div class='price_tag'><span>";
-                        recent_order += recent_price.toString();
-                        recent_order += "</span></div>";
-                        recent_order += recent_order_type_text;
-                        recent_order += "</svg></button></a>";
-
-                        console.log(recent_order);
-                        order_table += recent_order;
-                        console.log(order_table);
-                    }
-                    
+                    }  
                 }
                 else {
                     console.error(error);
