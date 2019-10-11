@@ -99,7 +99,7 @@ window.addEventListener('load', async () => {
                         recent_order += "</svg></button></a>";
 
                         console.log(recent_order);
-                        
+                        order_table += recent_order;
                     }
                     
                 }
