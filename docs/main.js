@@ -61,6 +61,7 @@ window.addEventListener('load', async () => {
                                     allOrders.push(order);
                                     table_length += 1;
                                 }
+                                console.log(allOrders);
                                 console.log(i);
                                 if (i == final_order) {
                                     console.log(table_length);
