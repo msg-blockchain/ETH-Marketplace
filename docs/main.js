@@ -59,6 +59,7 @@ window.addEventListener('load', async () => {
                                     order.splice(0, 1);
                                     allOrders.push(order);
                                     table_length += 1;
+                                    console.log(table_length);
                                 }
                             }
                             else {
