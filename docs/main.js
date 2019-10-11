@@ -64,12 +64,7 @@ window.addEventListener('load', async () => {
                                     allOrders.push(order);
                                     table_length += 1;
                                 }
-                                console.log(allOrders);
-                                console.log(i);
-                                if (counter == final_order) {
-                                    console.log(table_length);
-                                    console.log(allOrders);
-                                    
+                                if (counter == final_order) {                
                                     for (i=0; i<table_length; i++) {
                                         var recent_name = allOrders[i][0];
                                         var recent_order_type = allOrders[i][0];
@@ -91,6 +86,7 @@ window.addEventListener('load', async () => {
                                         recent_order += recent_order_type_text;
                                         recent_order += "</svg></button></a>";
                                         order_table += recent_order;
+                                        $('#orders').html(order_table);
                                     }
                                 }
                             }
