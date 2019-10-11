@@ -8,10 +8,7 @@ window.addEventListener('load', async () => {
         window.web3 = new Web3(ethereum);
         try {
             await ethereum.enable();
-
             var marketplace = web3.eth.contract(abi).at(contractAddress);
-
-            //Get User Address
             var user_account = web3.eth.accounts;
 
             marketplace.balanceOf(user_account, function (error, result) {
