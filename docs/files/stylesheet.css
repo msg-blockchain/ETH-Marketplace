@@ -1,7 +1,7 @@
 .big_text {
     position: absolute;
     left: 240px;
-    top: 120px;
+    top: 60px;
     overflow: visible;
     width: 305px;
     white-space: nowrap;
@@ -117,7 +117,7 @@
     width: 160px;
     height: 48px;
     left: 600px;
-    top: 680px;
+    top: 620px;
     overflow: visible;
     border-radius: 2px;
     border-style: hidden;
@@ -175,14 +175,14 @@
     width: 50px;
     height: 50px;
     left: 600px;
-    top: 120px;
+    top: 60px;
     overflow: visible;
 }
 
 .MMC_balance_number {
     position: absolute;
     left: 640px;
-    top: 124px;
+    top: 64px;
     overflow: visible;
     width: 120px;
     white-space: nowrap;
@@ -227,7 +227,7 @@
     width: 28px;
     height: 28px;
     left: 240px;
-    top: 80px;
+    top: 60px;
     overflow: visible;
     border-style: hidden;
     background-color: white;
