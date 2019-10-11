@@ -89,6 +89,7 @@ window.addEventListener('load', async () => {
                                         order_table += recent_order;
                                         $('#orders').html(order_table);
                                         count += 1;
+                                        console.log(recent_order);
                                     }
                                 }
                             }
