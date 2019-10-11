@@ -47,6 +47,7 @@ window.addEventListener('load', async () => {
                     console.log(JSON.stringify(result));
                     var orderCount = JSON.parse(result);
                     var allOrders = [];
+                    var table_length = 0;
                     
                     for (i=0; i < orderCount; i++) {
                         marketplace.allOrders(i, function (error, result) {
@@ -57,6 +58,7 @@ window.addEventListener('load', async () => {
                                     order.splice(0, 1);
                                     order.splice(0, 1);
                                     allOrders.push(order);
+                                    table_length += 1;
                                 }
                             }
                             else {
@@ -65,10 +67,8 @@ window.addEventListener('load', async () => {
                         });
 
                     }
-
-                    console.log(allOrders);
-                    var table_length = allOrders[0].length;
                     console.log(table_length);
+                    console.log(allOrders);
                     var order_table = "";
 
                     for (i=0; i<table_length; i++) {
