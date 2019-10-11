@@ -58,9 +58,6 @@ window.addEventListener('load', async () => {
                                     order.splice(0, 1);
                                     allOrders.push(order);
                                 }
-                                else {
-                                    console.log("nope");
-                                }
                             }
                             else {
                                 console.error(error);
@@ -70,7 +67,7 @@ window.addEventListener('load', async () => {
                     }
 
                     console.log(allOrders);
-                    var table_length = allOrders.length;
+                    var table_length = allOrders[0].length;
                     console.log(table_length);
                     var order_table = "";
 
