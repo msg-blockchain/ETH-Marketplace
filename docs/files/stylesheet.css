@@ -78,23 +78,9 @@
 }
 
 .main_frame {
-    position: absolute;
-    box-sizing: border-box;
-    transform: translateX(-50%) translateY(-50%);
-    left: 50%;
-    top: 50%;
+
     background: #E5E5E5;
-    width: 1000px;
-    height: 820px;
-    background-color: rgba(255,255,255,1);
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    --web-view-name: Register;
-    --web-view-id: Register;
-    --web-center-horizontally: true;
-    --web-center-vertically: true;
-    --web-enable-deep-linking: true;
+
 }
 
 .box {
