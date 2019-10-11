@@ -419,5 +419,6 @@
       top: 270px;
       left:270px;
       overflow: scroll;
-      height: 600px;
+      height: 500px;
+      width: 520px;
   }
