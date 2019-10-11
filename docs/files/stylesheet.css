@@ -413,3 +413,10 @@
     transform: translateX(-50%);
     transform: translateY(-50%);
   }
+
+  .scroll_area {
+      position: absolute;
+      top: 270px;
+      overflow: scroll;
+      height: 600px;
+  }
