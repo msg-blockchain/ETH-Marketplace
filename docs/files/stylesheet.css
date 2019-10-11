@@ -417,6 +417,7 @@
   .scroll_area {
       position: absolute;
       top: 270px;
+      left:270px;
       overflow: scroll;
       height: 600px;
   }
