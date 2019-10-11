@@ -422,3 +422,7 @@
       height: 500px;
       width: 520px;
   }
+
+.scroll_area::-webkit-scrollbar {
+    display: none;
+}
