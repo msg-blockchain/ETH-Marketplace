@@ -71,6 +71,7 @@ window.addEventListener('load', async () => {
 
                     console.log(allOrders);
                     var table_length = allOrders.length;
+                    console.log(table_length);
                     var order_table = "";
 
                     for (i=0; i<table_length; i++) {
