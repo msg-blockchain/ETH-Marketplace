@@ -154,7 +154,20 @@
 
 .menu_button:hover {
     border-width: 2px;
+
+    content: '';
+    z-index: -1;
+    margin: -1 * 0.05 * 100%;
+    box-shadow: inset 0 0 0 2px; 
+    animation: clipMe 8s linear infinite;
 }
+
+@keyframes clipMe {
+    0%, 100% {clip: rect(0px, 522px, 2px, 0px); }
+    25% {clip: rect(0px, 2px, 70px, 0px); }
+    50% {clip: rect(522px, 522px, 522px, 0px); }
+    75% {clip: rect(0px, 522px, 522px, 522px); }
+  }
 
 .menu_button_content {
     position: absolute;
@@ -299,7 +312,7 @@
 
 .price_tag {
     position: absolute;
-    left: 340px;
+    left: 350px;
     top: 17px;
     overflow: visible;
     width: auto;
