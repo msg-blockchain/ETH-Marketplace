@@ -85,7 +85,7 @@ window.addEventListener('load', async () => {
                                         $('#orders').html(order_table);
                                         count += 1;
                                     }
-                                    $('#marketplace_order_box').click(function () {
+                                    $('.marketplace_order_box').click(function () {
                                         console.log(this.id);
                                         alert(this.id);
                                         var clicked_id = this.id;
@@ -105,7 +105,7 @@ window.addEventListener('load', async () => {
                 }
             });
 
-            $('#marketplace_order_box').click(function () {
+            $('.marketplace_order_box').click(function () {
                 console.log(this.id);
                 alert(this.id);
                 var clicked_id = this.id;
