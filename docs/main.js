@@ -70,7 +70,7 @@ window.addEventListener('load', async () => {
                                         }
                                         var recent_price = parseInt(allOrders[count][2] / (10 ** 12));
                                         var y_pos = count * 100;
-                                        var recent_order = "<a href='Order_Details.html'><button onclick='setParams()' id='"
+                                        var recent_order = "<a href='Order_Details.html'><button id='"
                                         recent_order += count.toString();
                                         recent_order += "' class='marketplace_order_box' style='top: ";
                                         recent_order += y_pos.toString();
@@ -85,13 +85,31 @@ window.addEventListener('load', async () => {
                                         $('#orders').html(order_table);
                                         count += 1;
                                     }
-/*                                     $('.marketplace_order_box').click(function () {
+                                    $('.marketplace_order_box').click(function () {
                                         var clicked_id = this.id;
                                         var clicked_title = allOrders[clicked_id][0];
                                         var clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
                                         var clicked_type = allOrders[clicked_id][1];
-                                        setParams(clicked_title, clicked_price, clicked_type)
-                                    }); */
+                                        var display_type = "";
+                                        if (clicked_type == true) {
+                                            display_type = "sell";
+                                        }
+                                        else {
+                                            display_type = "buy";
+
+                                        }
+                                        var display_text = "Are you sure you want to ";
+                                        display_text += display_type.toString() + " ";
+                                        display_text += clicked_title.toString();
+                                        display_text += " for ";
+                                        display_text += clicked_price.toString();
+                                        display_text += " MMC?"
+                                        if (confirm(display_text)) {
+                                            txt = "You pressed OK!";
+                                          } else {
+                                            txt = "You pressed Cancel!";
+                                          }
+                                    });
                                 }
                             }
                             else {
@@ -104,7 +122,6 @@ window.addEventListener('load', async () => {
                     console.error(error);
                 }
             });
-
 
             //TODO---------------------------------------
             //Automatically go to Register site if user is not registered
@@ -129,22 +146,5 @@ window.addEventListener('load', async () => {
     }
 });
 
-function setParams() {
-    console.log("awfdafdaf");
-    var clicked_id = this.id;
-    var clicked_title = allOrders[clicked_id][0];
-    var clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
-    var clicked_type = allOrders[clicked_id][1];
-    $('#test_id').html("öööööööö");
-    $('#order_title').html(clicked_title);
-    $('#order_price').html(clicked_price);
 
-    if (clicked_type == true) {
-        console.log("lllloooooooooolllllll");
-    }
-    else {
-        console.log("noooooooooooo");
-
-    }
-}
 
