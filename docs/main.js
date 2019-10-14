@@ -105,7 +105,7 @@ window.addEventListener('load', async () => {
                                         display_text += " for ";
                                         display_text += clicked_price.toString();
                                         display_text += " MMC?"
-
+                                        console.log(clicked_id);
                                         if (confirm(display_text)) {
                                             marketplace.fillOrder(clicked_id, function (error, result) {
                                                 if (!error) {
