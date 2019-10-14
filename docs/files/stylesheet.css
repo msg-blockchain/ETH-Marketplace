@@ -154,19 +154,20 @@
 
 .menu_button:hover {
     animation-name: clipMe;
-    animation-duration: 4s;
+    animation-duration: 1s;
     animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
 
 @keyframes clipMe {
     0%, 100% {border-width: 1px}
-    50% {border-width: 4px}
+    50% {border-width: 2px}
   }
 
 .menu_button_content {
     position: absolute;
     left: 15px;
-    top: 15px;
+    top: 50%;
     overflow: visible;
     width: 380px;
     white-space: nowrap;
@@ -176,6 +177,7 @@
     font-weight: normal;
     font-size: 28px;
     color: black;
+    transform: translateZ(-50%);
 }
 
 .MMC_balance_wrapper {
