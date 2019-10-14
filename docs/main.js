@@ -72,7 +72,7 @@ window.addEventListener('load', async () => {
                                         var y_pos = count * 100;
                                         var recent_order = "<a href='Order_Details.html'><button id='"
                                         recent_order += count.toString();
-                                        recent_order += "' onClick='reply_click(this.id)' class='marketplace_order_box' style='top: ";
+                                        recent_order += "' class='marketplace_order_box' style='top: ";
                                         recent_order += y_pos.toString();
                                         recent_order += "px;'><div class='marketplace_order_box_text'><span>";
                                         recent_order += recent_name.toString();
@@ -86,8 +86,9 @@ window.addEventListener('load', async () => {
                                         count += 1;
                                     }
                                 }
-                                $('#marketplace_order_box').click(function (clicked_id) {
-                                    console.log(document.getElementById(clicked_id));
+                                $('#marketplace_order_box').click(function () {
+                                    console.log(this.id);
+                                    alert(this.id);
                                 });
                             }
                             else {
