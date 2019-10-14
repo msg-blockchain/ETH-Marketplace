@@ -86,10 +86,17 @@ window.addEventListener('load', async () => {
                                         count += 1;
                                     }
                                     $('.marketplace_order_box').click(function () {
-                                        console.log(this.id);
                                         clicked_id = this.id;
-                                        $('#order_title').html(allOrders[clicked_id][0]);
+                                        $('#order_title').html("laodkkdddddddddddddddd");
+                                        //$('#order_title').html(allOrders[clicked_id][0]);
                                         $('#order_price').html(parseInt(allOrders[clicked_id][2] / (10 ** 12)));
+
+                                        if (allOrders[count][1] == true) {
+
+                                        }
+                                        else {
+
+                                        }
                                     });
                                 }
                             }
