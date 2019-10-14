@@ -169,8 +169,13 @@ window.addEventListener('load', async () => {
                         marketplace.allUsers(i, function (error, result) {
                             if (!error) {
                                 console.log(JSON.stringify(result));
-                                var user = JSON.parse(result);
-                                console.log(user);
+                                var user_address = result[2];
+                                console.log(user_address);
+
+                                if (user_account == user_address) {
+                                    console.log('User is registered');
+                                }
+                                
                             }
                             else {
                                 console.error(error);
