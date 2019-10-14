@@ -85,14 +85,14 @@ window.addEventListener('load', async () => {
                                         $('#orders').html(order_table);
                                         count += 1;
                                     }
+                                    $('#marketplace_order_box').click(function () {
+                                        console.log(this.id);
+                                        alert(this.id);
+                                        var clicked_id = this.id;
+                                        console.log(clicked_id);
+                                        console.log("works");
+                                    });
                                 }
-                                $('#marketplace_order_box').click(function () {
-                                    console.log(this.id);
-                                    alert(this.id);
-                                    var clicked_id = this.id;
-                                    console.log(clicked_id);
-                                    console.log("works");
-                                });
                             }
                             else {
                                 console.error(error);
