@@ -19,22 +19,22 @@
 		</div>
 		<div class="small_text" style="position: absolute; left: 240px; top: 140px;">
 			<span>Order Type</span>
-			<label class="buy_sell_radio_button" style="position: absolute; top: 60px;">Buy<input type="radio"
+			<label id="radio_buy" class="buy_sell_radio_button" style="position: absolute; top: 60px;">Buy<input type="radio"
 					checked="checked" name="radio">
 				<span class="checkmark"></span></label>
-			<label class="buy_sell_radio_button" style="position: absolute; top: 110px;">Sell<input type="radio"
+			<label id="radio_sell" class="buy_sell_radio_button" style="position: absolute; top: 110px;">Sell<input type="radio"
 					name="radio">
 				<span class="checkmark"></span></label>
 		</div>
 		<div class="small_text" style="position: absolute; left: 240px; top: 320px;">
 			<span>Order Title</span>
 		</div>
-		<input class="text_input" style="position: absolute; left: 240px; top: 370px;">
+		<input id="order_title" class="text_input" style="position: absolute; left: 240px; top: 370px;">
 		</input>
 		<div class="small_text" style="position: absolute; left: 240px; top: 460px;">
 			<span>Price (MMC)</span>
 		</div>
-		<input class="number_input" type="number" min="1" step="100" max="1000000000000"
+		<input id="order_price" class="number_input" type="number" min="1" step="100" max="1000000000000"
 			style="position: absolute; left: 240px; top: 510px;">
 		</input>
 		<div class="MMC_balance_number">
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		<a href="Main.html">
-			<button class="next">
+			<button id="create_button" class="next">
 				<div class="continue">
 					<span>create</span>
 				</div>

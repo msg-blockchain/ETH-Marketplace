@@ -130,11 +130,40 @@ window.addEventListener('load', async () => {
                 }
             });
 
+
+            $('#create_button').click(function () {
+                var order_title = String($('#order_title'));
+                var order_type = document.getElementById(radio_buy).checked;
+                var order_price = parseInt($('#order_price')) * (10 ** 12);
+
+                console.log(order_type);
+                var create_display_text = "Create Order to";
+                if (order_type == true) {
+                    var type_diplay = "buy";
+                }
+                else {
+                    var type_diplay = "sell";
+                }
+                create_display_text += type_diplay + " ";
+                create_display_text += order_title + " for ";
+                create_display_text += parseInt($('#order_price')) + " MMC?";
+
+                if (confirm(create_display_text)) {
+                    marketplace.createOrder(order_title, order_type, order_price, function (error, result) {
+                        if (!error) {
+                            console.log(JSON.stringify(result));
+                        }
+                        else {
+                            console.error(error);
+                        }
+                    });
+                  }
+            });
+
             //TODO---------------------------------------
             //Automatically go to Register site if user is not registered
             //Register Functionality
             //Create Order
-            //Order Details
             //Load sign on button -> events
 
         } catch (error) {
