@@ -161,12 +161,11 @@
 
 @keyframes clipMe {
     0%, 100% {border-width: 1px}
-    50% {border-width: 2px}
+    50% {border-width: 3px}
   }
 
 .menu_button_content {
     position: absolute;
-    left: 50%;
     top: 50%;
     overflow: visible;
     width: 380px;
