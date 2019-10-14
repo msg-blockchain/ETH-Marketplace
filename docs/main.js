@@ -90,11 +90,12 @@ window.addEventListener('load', async () => {
                                         alert(clicked_id);
                                         clicked_name = allOrders[clicked_id][0];
                                         clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
+                                        alert(clicked_name);
+                                        alert(clicked_price);
                                         $('#test_id').html("laodkkdddddddddddddddd");
                                         $('#order_title').html(clicked_title);
                                         $('#order_price').html(clicked_price);
-
-                                        alert(clicked_title);
+                                        
                                         if (allOrders[clicked_id][1] == true) {
 
                                         }
