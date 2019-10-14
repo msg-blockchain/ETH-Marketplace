@@ -161,12 +161,12 @@
 
 @keyframes clipMe {
     0%, 100% {border-width: 1px}
-    50% {border-width: 2px}
+    50% {border-width: 3px}
   }
 
 .menu_button_content {
     position: absolute;
-    left: 15px;
+    left: 50%;
     top: 50%;
     overflow: visible;
     width: 380px;
@@ -177,7 +177,8 @@
     font-weight: normal;
     font-size: 28px;
     color: black;
-    transform: translateZ(-50%);
+    transform: translateX(-50%);
+    transform: translateY(-50%);
 }
 
 .MMC_balance_wrapper {
