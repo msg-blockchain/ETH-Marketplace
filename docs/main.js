@@ -89,7 +89,6 @@ window.addEventListener('load', async () => {
                                         console.log(this.id);
                                         clicked_id = this.id;
                                         $('#order_title').html(allOrders[clicked_id][0]);
-                                        $('#order_creator').html("Peter");
                                         $('#order_price').html(parseInt(allOrders[clicked_id][2] / (10 ** 12)));
                                     });
                                 }
