@@ -70,7 +70,7 @@ window.addEventListener('load', async () => {
                                         }
                                         var recent_price = parseInt(allOrders[count][2] / (10 ** 12));
                                         var y_pos = count * 100;
-                                        var recent_order = "<a href='Order_Details.html'><button id='"
+                                        var recent_order = "<a><button id='"
                                         recent_order += count.toString();
                                         recent_order += "' class='marketplace_order_box' style='top: ";
                                         recent_order += y_pos.toString();
