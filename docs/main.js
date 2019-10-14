@@ -105,7 +105,7 @@ window.addEventListener('load', async () => {
 
                                     //function setParams (title, price, buy) {
                                         
-                                    }
+                                    //}
                                 }
                             }
                             else {
