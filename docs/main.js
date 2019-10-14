@@ -93,6 +93,10 @@ window.addEventListener('load', async () => {
                                         setParams(clicked_title, clicked_price, clicked_type)
                                     });
 
+                                    $('#test_id').html("öööööööö");
+                                    $('#order_title').html(title);
+                                    $('#order_price').html(price);
+
                                     function setParams (title, price, buy) {
                                         $('#test_id').html("öööööööö");
                                         $('#order_title').html(title);
