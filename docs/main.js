@@ -94,8 +94,8 @@ window.addEventListener('load', async () => {
                                     });
 
                                     $('#test_id').html("öööööööö");
-                                    $('#order_title').html(title);
-                                    $('#order_price').html(price);
+                                    $('#order_title').html(clicked_title);
+                                    $('#order_price').html(clicked_price);
 
                                     function setParams (title, price, buy) {
                                         $('#test_id').html("öööööööö");
