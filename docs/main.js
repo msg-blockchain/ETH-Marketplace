@@ -53,6 +53,7 @@ window.addEventListener('load', async () => {
                                 counter += 1;
                                 var order = JSON.stringify(result);
                                 order = JSON.parse(order);
+                                console.log(order);
                                 if (order[5] == true) {
                                     order.splice(0, 2);
                                     allOrders.push(order);
