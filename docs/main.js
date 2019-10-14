@@ -93,7 +93,7 @@ window.addEventListener('load', async () => {
                                         setParams(clicked_title, clicked_price, clicked_type)
                                     }); */
                                 
-                                    function setParams () {
+                                    function setParams() {
                                         var clicked_id = this.id;
                                         var clicked_title = allOrders[clicked_id][0];
                                         var clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
