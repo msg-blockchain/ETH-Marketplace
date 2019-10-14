@@ -105,6 +105,14 @@ window.addEventListener('load', async () => {
                 }
             });
 
+            $('#marketplace_order_box').click(function () {
+                console.log(this.id);
+                alert(this.id);
+                var clicked_id = this.id;
+                console.log(clicked_id);
+                console.log("works");
+            });
+
             //TODO---------------------------------------
             //Automatically go to Register site if user is not registered
             //Register Functionality
