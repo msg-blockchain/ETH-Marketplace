@@ -29,6 +29,7 @@ window.addEventListener('load', async () => {
                 marketplace.buyTokens({ value: eth_amount, gas: 300000, gasPrice: 40000000000 }, function (error, result) {
                     if (!error) {
                         console.log(JSON.stringify(result));
+                        location.reload();
                     }
                     else {
                         console.error(error);
@@ -159,10 +160,32 @@ window.addEventListener('load', async () => {
                   }
             });
 
+            marketplace.userCount(function (error, result) {
+                if (!error) {
+                    console.log(JSON.stringify(result));
+                    var userCount = JSON.parse(result);
+
+                    for (i=0; i < userCount; i++) {
+                        marketplace.allUsers(i, function (error, result) {
+                            if (!error) {
+                                console.log(JSON.stringify(result));
+                                var user = JSON.parse(result);
+                                console.log(user);
+                            }
+                            else {
+                                console.error(error);
+                            }
+                        });
+                    }
+                }
+                else {
+                    console.error(error);
+                }
+            });
+
             //TODO---------------------------------------
             //Automatically go to Register site if user is not registered
             //Register Functionality
-            //Load sign on button -> events
 
         } catch (error) {
             // User denied account access...
@@ -171,12 +194,12 @@ window.addEventListener('load', async () => {
     // Legacy dapp browsers...
     else if (window.web3) {
         window.web3 = new Web3(web3.currentProvider);
-        // Acccounts always exposed
-        web3.eth.sendTransaction({/* ... */ });
+        alert("Please install Metamask Extension");
     }
     // Non-dapp browsers...
     else {
         console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+        alert("Please install Metamask Extension");
     }
 });
 
