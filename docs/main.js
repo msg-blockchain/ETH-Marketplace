@@ -92,23 +92,23 @@ window.addEventListener('load', async () => {
                                         var clicked_type = allOrders[clicked_id][1];
                                         setParams(clicked_title, clicked_price, clicked_type)
                                     }); */
-                                
-                                    function setParams() {
-                                        var clicked_id = this.id;
-                                        var clicked_title = allOrders[clicked_id][0];
-                                        var clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
-                                        var clicked_type = allOrders[clicked_id][1];
-                                        $('#test_id').html("öööööööö");
-                                        $('#order_title').html(clicked_title);
-                                        $('#order_price').html(clicked_price);
 
-                                        if (clicked_type == true) {
-                                            console.log("lllloooooooooolllllll");
-                                        }
-                                        else {
-                                            console.log("noooooooooooo");
+                                }
+                                function setParams() {
+                                    var clicked_id = this.id;
+                                    var clicked_title = allOrders[clicked_id][0];
+                                    var clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
+                                    var clicked_type = allOrders[clicked_id][1];
+                                    $('#test_id').html("öööööööö");
+                                    $('#order_title').html(clicked_title);
+                                    $('#order_price').html(clicked_price);
 
-                                        }
+                                    if (clicked_type == true) {
+                                        console.log("lllloooooooooolllllll");
+                                    }
+                                    else {
+                                        console.log("noooooooooooo");
+
                                     }
                                 }
                             }
