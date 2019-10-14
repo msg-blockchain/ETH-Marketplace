@@ -104,8 +104,6 @@ window.addEventListener('load', async () => {
                                         display_text += clicked_price.toString();
                                         display_text += " MMC?"
 
-                                        console.log(clicked_id);
-
                                         if (confirm(display_text)) {
                                             marketplace.fillOrder(clicked_id, function (error, result) {
                                                 if (!error) {
@@ -131,15 +129,12 @@ window.addEventListener('load', async () => {
                 }
             });
 
-
             $('#create_button').click(function () {
                 var order_title = String($('#order_title').val());
                 var radio = document.getElementsByName('radio');
                 var order_type = radio[0].checked;
                 var order_price_input = parseInt($('#order_price').val());
                 var order_price = order_price_input * (10 ** 12);
-
-                console.log(order_title);
                 var create_display_text = "Create order to ";
                 if (order_type == true) {
                     var type_display = "buy";
@@ -167,7 +162,6 @@ window.addEventListener('load', async () => {
             //TODO---------------------------------------
             //Automatically go to Register site if user is not registered
             //Register Functionality
-            //Create Order
             //Load sign on button -> events
 
         } catch (error) {
