@@ -87,9 +87,11 @@ window.addEventListener('load', async () => {
                                     }
                                     $('.marketplace_order_box').click(function () {
                                         clicked_id = this.id;
-                                        $('#order_title').html("laodkkdddddddddddddddd");
-                                        //$('#order_title').html(allOrders[clicked_id][0]);
-                                        $('#order_price').html(parseInt(allOrders[clicked_id][2] / (10 ** 12)));
+                                        clicked_name = allOrders[clicked_id][0];
+                                        clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
+                                        $('#test').html("laodkkdddddddddddddddd");
+                                        $('#order_title').html(clicked_title);
+                                        $('#order_price').html(clicked_price);
 
                                         if (allOrders[clicked_id][1] == true) {
 
