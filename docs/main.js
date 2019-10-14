@@ -55,25 +55,26 @@ window.addEventListener('load', async () => {
                                 order = JSON.parse(order);
                                 console.log(order);
                                 if (order[5] == true) {
-                                    order.splice(0, 2);
+                                    order.splice(0, 1);
                                     allOrders.push(order);
                                     table_length += 1;
                                 }
                                 var count = 0;
                                 if (counter == final_order) {
                                     for (i = 0; i < table_length; i++) {
-                                        var recent_name = allOrders[count][0];
-                                        var recent_order_type = allOrders[count][1];
+                                        var order_id = allOrders[count][0];
+                                        var recent_name = allOrders[count][1];
+                                        var recent_order_type = allOrders[count][2];
                                         if (recent_order_type == true) {
                                             recent_order_type_text = "<div class='sell_order_tag'><span>Sell</span></div>";
                                         }
                                         else {
                                             recent_order_type_text = "<div class='buy_order_tag'><span>Buy</span></div>";
                                         }
-                                        var recent_price = parseInt(allOrders[count][2] / (10 ** 12));
+                                        var recent_price = parseInt(allOrders[count][3] / (10 ** 12));
                                         var y_pos = count * 100;
                                         var recent_order = "<a><button id='"
-                                        recent_order += count.toString();
+                                        recent_order += order_id.toString();
                                         recent_order += "' class='marketplace_order_box' style='top: ";
                                         recent_order += y_pos.toString();
                                         recent_order += "px;'><div class='marketplace_order_box_text'><span>";
@@ -89,9 +90,9 @@ window.addEventListener('load', async () => {
                                     }
                                     $('.marketplace_order_box').click(function () {
                                         var clicked_id = this.id;
-                                        var clicked_title = allOrders[clicked_id][0];
-                                        var clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
-                                        var clicked_type = allOrders[clicked_id][1];
+                                        var clicked_title = allOrders[clicked_id][1];
+                                        var clicked_price = parseInt(allOrders[clicked_id][3] / (10 ** 12));
+                                        var clicked_type = allOrders[clicked_id][2];
                                         var display_type = "";
                                         if (clicked_type == true) {
                                             display_type = "sell";
