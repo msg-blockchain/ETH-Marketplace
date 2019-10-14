@@ -132,13 +132,13 @@ window.addEventListener('load', async () => {
 
 
             $('#create_button').click(function () {
-                var order_title = String($('#order_title'));
+                var order_title = String($('#order_title').val());
                 var radio = document.getElementsByName('radio');
                 var order_type = radio[0].checked;
-                var order_price_input = parseInt($('#order_price'));
+                var order_price_input = parseInt($('#order_price').val());
                 var order_price = order_price_input * (10 ** 12);
 
-                console.log(order_type);
+                console.log(order_title);
                 var create_display_text = "Create order to ";
                 if (order_type == true) {
                     var type_display = "buy ";
