@@ -161,7 +161,7 @@
 
 @keyframes clipMe {
     0%, 100% {border-width: 1px}
-    50% {border-width: 3px}
+    50% {border-width: 2px}
   }
 
 .menu_button_content {
@@ -177,7 +177,6 @@
     font-weight: normal;
     font-size: 28px;
     color: black;
-    transform: translateX(-50%);
     transform: translateY(-50%);
 }
 
