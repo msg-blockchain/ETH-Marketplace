@@ -179,6 +179,7 @@ window.addEventListener('load', async () => {
                             else {
                                 console.error(error);
                             }
+                            console.log("kaefkweofok");
                         });
                     }
                     if (registered == true) {
