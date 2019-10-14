@@ -181,7 +181,7 @@ window.addEventListener('load', async () => {
                             }
                         });
                     }
-                    log.console(registered);
+                    console.log(registered);
                     if (registered == true) {
                         console.log('User is registered');
                         if (location == 'https://msg-blockchain.github.io/ETH-Marketplace/Register.html' || location == 'https://msg-blockchain.github.io/ETH-Marketplace/Register_Message.html') {
