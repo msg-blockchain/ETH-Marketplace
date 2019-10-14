@@ -167,6 +167,7 @@
 .menu_button_content {
     position: absolute;
     top: 50%;
+    width: 100%;
     overflow: visible;
     white-space: nowrap;
     text-align: center;
