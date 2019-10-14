@@ -92,13 +92,14 @@ window.addEventListener('load', async () => {
                                         alert(clicked_name);
                                         alert(clicked_price);
                                         $('#test_id').html("öööööööö");
-                                        $('#order_title').html(clicked_title);
+                                        $('#order_title').html(clicked_name);
                                         $('#order_price').html(clicked_price);
                                         
                                         if (allOrders[clicked_id][1] == true) {
-
+                                            console.log("lllloooooooooolllllll");
                                         }
                                         else {
+                                            console.log("noooooooooooo");
 
                                         }
                                     });
