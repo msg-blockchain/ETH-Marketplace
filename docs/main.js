@@ -139,14 +139,14 @@ window.addEventListener('load', async () => {
                 var order_price = order_price_input * (10 ** 12);
 
                 console.log(order_type);
-                var create_display_text = "Create order to";
+                var create_display_text = "Create order to ";
                 if (order_type == true) {
-                    var type_diplay = "buy ";
+                    var type_display = "buy ";
                 }
                 else {
-                    var type_diplay = "sell ";
+                    var type_display = "sell ";
                 }
-                create_display_text += type_diplay + " ";
+                create_display_text += type_display + " ";
                 create_display_text += order_title.toString() + " for ";
                 create_display_text += order_price_input.toString() + " MMC?";
 
