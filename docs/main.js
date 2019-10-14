@@ -106,6 +106,12 @@ window.addEventListener('load', async () => {
 
                                         if (confirm(display_text)) {
                                             marketplace.fillOrder(clicked_id, function (error, result) {
+                                                if (!error) {
+                                                    console.log(JSON.stringify(result));
+                                                }
+                                                else {
+                                                    console.error(error);
+                                                }
                                             });
                                           }
                                     });
