@@ -153,20 +153,14 @@
 }
 
 .menu_button:hover {
-    border-width: 2px;
-
-    content: '';
-    z-index: -1;
-    margin: -1 * 0.05 * 100%;
-    box-shadow: inset 0 0 0 2px; 
-    animation: clipMe 8s linear infinite;
+    animation-name: clipMe;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
 }
 
 @keyframes clipMe {
-    0%, 100% {clip: rect(0px, 522px, 2px, 0px); }
-    25% {clip: rect(0px, 2px, 70px, 0px); }
-    50% {clip: rect(522px, 522px, 522px, 0px); }
-    75% {clip: rect(0px, 522px, 522px, 522px); }
+    0%, 100% {border-width: 1px}
+    50% {border-width: 4px}
   }
 
 .menu_button_content {
