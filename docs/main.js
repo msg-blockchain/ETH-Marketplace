@@ -70,7 +70,9 @@ window.addEventListener('load', async () => {
                                         }
                                         var recent_price = parseInt(allOrders[count][2] / (10 ** 12));
                                         var y_pos = count * 100;
-                                        var recent_order = "<a href='Order_Details.html'><button class='marketplace_order_box' style='top: ";
+                                        var recent_order = "<a href='Order_Details.html'><button id='"
+                                        recent_order += count.toString();
+                                        recent_order += "' onClick='reply_click(this.id)' class='marketplace_order_box' style='top: ";
                                         recent_order += y_pos.toString();
                                         recent_order += "px;'><div class='marketplace_order_box_text'><span>";
                                         recent_order += recent_name.toString();
@@ -83,6 +85,9 @@ window.addEventListener('load', async () => {
                                         $('#orders').html(order_table);
                                         count += 1;
                                     }
+                                }
+                                $('#marketplace_order_box').click(function (clicked_id) {
+                                    console.log(document.getElementById(clicked_id));
                                 }
                             }
                             else {
