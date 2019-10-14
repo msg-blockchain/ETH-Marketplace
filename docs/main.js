@@ -86,13 +86,12 @@ window.addEventListener('load', async () => {
                                         count += 1;
                                     }
                                     $('.marketplace_order_box').click(function () {
-                                        clicked_id = this.id;
-                                        clicked_name = allOrders[clicked_id][0];
-                                        clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
-                                        alert(clicked_name);
-                                        alert(clicked_price);
+                                        var clicked_id = this.id;
+                                        var clicked_title = allOrders[clicked_id][0];
+                                        var clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
+                                        
                                         $('#test_id').html("öööööööö");
-                                        $('#order_title').html(clicked_name);
+                                        $('#order_title').html(clicked_title);
                                         $('#order_price').html(clicked_price);
                                         
                                         if (allOrders[clicked_id][1] == true) {
@@ -103,6 +102,10 @@ window.addEventListener('load', async () => {
 
                                         }
                                     });
+
+                                    //function setParams (title, price, buy) {
+                                        
+                                    }
                                 }
                             }
                             else {
