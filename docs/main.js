@@ -91,7 +91,7 @@ window.addEventListener('load', async () => {
                                         //$('#order_title').html(allOrders[clicked_id][0]);
                                         $('#order_price').html(parseInt(allOrders[clicked_id][2] / (10 ** 12)));
 
-                                        if (allOrders[count][1] == true) {
+                                        if (allOrders[clicked_id][1] == true) {
 
                                         }
                                         else {
