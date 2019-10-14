@@ -164,6 +164,7 @@ window.addEventListener('load', async () => {
                 if (!error) {
                     console.log(JSON.stringify(result));
                     var userCount = JSON.parse(result);
+                    var registered;
 
                     for (i=0; i < userCount; i++) {
                         marketplace.allUsers(i, function (error, result) {
@@ -173,14 +174,19 @@ window.addEventListener('load', async () => {
                                 console.log(user_address);
 
                                 if (user_account == user_address) {
-                                    console.log('User is registered');
+                                    registered == true;
                                 }
-                                
                             }
                             else {
                                 console.error(error);
                             }
                         });
+                    }
+                    if (registered == true) {
+                        console.log('User is registered');
+                    }
+                    else {
+                        window.open("https://msg-blockchain.github.io/ETH-Marketplace/Register.html", "_self");
                     }
                 }
                 else {
