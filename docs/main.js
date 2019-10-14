@@ -70,7 +70,7 @@ window.addEventListener('load', async () => {
                                         }
                                         var recent_price = parseInt(allOrders[count][2] / (10 ** 12));
                                         var y_pos = count * 100;
-                                        var recent_order = "<a href='Order_Details.html'><button id='"
+                                        var recent_order = "<a href='Order_Details.html'><button onclick='setParams()' id='"
                                         recent_order += count.toString();
                                         recent_order += "' class='marketplace_order_box' style='top: ";
                                         recent_order += y_pos.toString();
@@ -85,24 +85,24 @@ window.addEventListener('load', async () => {
                                         $('#orders').html(order_table);
                                         count += 1;
                                     }
-                                    $('.marketplace_order_box').click(function () {
+/*                                     $('.marketplace_order_box').click(function () {
                                         var clicked_id = this.id;
                                         var clicked_title = allOrders[clicked_id][0];
                                         var clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
                                         var clicked_type = allOrders[clicked_id][1];
                                         setParams(clicked_title, clicked_price, clicked_type)
-                                    });
-
-                                    $('#test_id').html("öööööööö");
-                                    $('#order_title').html(clicked_title);
-                                    $('#order_price').html(clicked_price);
-
-                                    function setParams (title, price, buy) {
+                                    }); */
+                                
+                                    function setParams () {
+                                        var clicked_id = this.id;
+                                        var clicked_title = allOrders[clicked_id][0];
+                                        var clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
+                                        var clicked_type = allOrders[clicked_id][1];
                                         $('#test_id').html("öööööööö");
-                                        $('#order_title').html(title);
-                                        $('#order_price').html(price);
+                                        $('#order_title').html(clicked_title);
+                                        $('#order_price').html(clicked_price);
 
-                                        if (buy == true) {
+                                        if (clicked_type == true) {
                                             console.log("lllloooooooooolllllll");
                                         }
                                         else {
