@@ -135,19 +135,20 @@ window.addEventListener('load', async () => {
                 var order_title = String($('#order_title'));
                 var radio = document.getElementsByName('radio');
                 var order_type = radio[0].checked;
-                var order_price = parseInt($('#order_price')) * (10 ** 12);
+                var order_price_input = parseInt($('#order_price'));
+                var order_price = order_price_input * (10 ** 12);
 
                 console.log(order_type);
-                var create_display_text = "Create Order to";
+                var create_display_text = "Create order to";
                 if (order_type == true) {
-                    var type_diplay = "buy";
+                    var type_diplay = "buy ";
                 }
                 else {
-                    var type_diplay = "sell";
+                    var type_diplay = "sell ";
                 }
                 create_display_text += type_diplay + " ";
-                create_display_text += order_title + " for ";
-                create_display_text += parseInt($('#order_price')) + " MMC?";
+                create_display_text += order_title.toString() + " for ";
+                create_display_text += order_price_input.toString() + " MMC?";
 
                 if (confirm(create_display_text)) {
                     marketplace.createOrder(order_title, order_type, order_price, function (error, result) {
