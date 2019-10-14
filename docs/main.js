@@ -88,7 +88,7 @@ window.addEventListener('load', async () => {
                                 }
                                 $('#marketplace_order_box').click(function (clicked_id) {
                                     console.log(document.getElementById(clicked_id));
-                                }
+                                });
                             }
                             else {
                                 console.error(error);
