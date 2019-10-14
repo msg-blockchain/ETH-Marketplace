@@ -171,7 +171,7 @@ window.addEventListener('load', async () => {
                             if (!error) {
                                 console.log(JSON.stringify(result));
                                 var user_address = result[2];
-                                console.log(user_address);
+                                console.log(location);
 
                                 if (user_account == user_address) {
                                     registered == true;
@@ -186,7 +186,7 @@ window.addEventListener('load', async () => {
                         console.log('User is registered');
                     }
                     else {
-                        window.open("https://msg-blockchain.github.io/ETH-Marketplace/Register.html", "_self");
+                        //window.open("https://msg-blockchain.github.io/ETH-Marketplace/Register.html", "_self");
                     }
                 }
                 else {
