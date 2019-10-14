@@ -164,7 +164,6 @@ window.addEventListener('load', async () => {
                 if (!error) {
                     console.log(JSON.stringify(result));
                     var userCount = JSON.parse(result);
-                    var registered;
 
                     for (i=0; i < userCount; i++) {
                         marketplace.allUsers(i, function (error, result) {
@@ -173,23 +172,21 @@ window.addEventListener('load', async () => {
                                 var user_address = result[2];
 
                                 if (user_account == user_address) {
-                                    registered == true;
+                                    console.log('User is registered');
+                                    if (location == 'https://msg-blockchain.github.io/ETH-Marketplace/Register.html' || location == 'https://msg-blockchain.github.io/ETH-Marketplace/Register_Message.html') {
+                                        window.open("https://msg-blockchain.github.io/ETH-Marketplace/index.html", "_self");
+                                    }                                }
+
+                                else if (i = (userCount-1)) {
+                                    if (location != 'https://msg-blockchain.github.io/ETH-Marketplace/Register.html' && location != 'https://msg-blockchain.github.io/ETH-Marketplace/Register_Message.html') {
+                                        window.open("https://msg-blockchain.github.io/ETH-Marketplace/Register.html", "_self");
+                                    }
                                 }
                             }
                             else {
                                 console.error(error);
                             }
                         });
-                    }
-                    console.log(registered);
-                    if (registered == true) {
-                        console.log('User is registered');
-                        if (location == 'https://msg-blockchain.github.io/ETH-Marketplace/Register.html' || location == 'https://msg-blockchain.github.io/ETH-Marketplace/Register_Message.html') {
-                            window.open("https://msg-blockchain.github.io/ETH-Marketplace/index.html", "_self");
-                        }
-                    }
-                    else if (location != 'https://msg-blockchain.github.io/ETH-Marketplace/Register.html' && location != 'https://msg-blockchain.github.io/ETH-Marketplace/Register_Message.html') {
-                        window.open("https://msg-blockchain.github.io/ETH-Marketplace/Register.html", "_self");
                     }
                 }
                 else {
