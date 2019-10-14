@@ -110,6 +110,7 @@ window.addEventListener('load', async () => {
                                             marketplace.fillOrder(clicked_id, function (error, result) {
                                                 if (!error) {
                                                     console.log(JSON.stringify(result));
+                                                    location.reload();
                                                 }
                                                 else {
                                                     console.error(error);
@@ -141,10 +142,10 @@ window.addEventListener('load', async () => {
                 console.log(order_title);
                 var create_display_text = "Create order to ";
                 if (order_type == true) {
-                    var type_display = "buy ";
+                    var type_display = "buy";
                 }
                 else {
-                    var type_display = "sell ";
+                    var type_display = "sell";
                 }
                 create_display_text += type_display + " ";
                 create_display_text += order_title.toString() + " for ";
@@ -154,6 +155,7 @@ window.addEventListener('load', async () => {
                     marketplace.createOrder(order_title, order_type, order_price, function (error, result) {
                         if (!error) {
                             console.log(JSON.stringify(result));
+                            location.reload();
                         }
                         else {
                             console.error(error);
