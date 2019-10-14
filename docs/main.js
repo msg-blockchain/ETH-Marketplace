@@ -87,12 +87,11 @@ window.addEventListener('load', async () => {
                                     }
                                     $('.marketplace_order_box').click(function () {
                                         clicked_id = this.id;
-                                        alert(clicked_id);
                                         clicked_name = allOrders[clicked_id][0];
                                         clicked_price = parseInt(allOrders[clicked_id][2] / (10 ** 12));
                                         alert(clicked_name);
                                         alert(clicked_price);
-                                        $('#test_id').html("laodkkdddddddddddddddd");
+                                        $('#test_id').html("öööööööö");
                                         $('#order_title').html(clicked_title);
                                         $('#order_price').html(clicked_price);
                                         
