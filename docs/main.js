@@ -53,7 +53,6 @@ window.addEventListener('load', async () => {
                                 counter += 1;
                                 var order = JSON.stringify(result);
                                 order = JSON.parse(order);
-                                console.log(order);
                                 if (order[5] == true) {
                                     order.splice(0, 1);
                                     allOrders.push(order);
@@ -89,7 +88,7 @@ window.addEventListener('load', async () => {
                                         count += 1;
                                     }
                                     $('.marketplace_order_box').click(function () {
-                                        var clicked_id = this.id;
+                                        var clicked_id = parseInt(this.id);
                                         var clicked_title = allOrders[clicked_id][1];
                                         var clicked_price = parseInt(allOrders[clicked_id][3] / (10 ** 12));
                                         var clicked_type = allOrders[clicked_id][2];
