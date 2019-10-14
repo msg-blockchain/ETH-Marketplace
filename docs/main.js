@@ -96,7 +96,6 @@ window.addEventListener('load', async () => {
                                         }
                                         else {
                                             display_type = "buy";
-
                                         }
                                         var display_text = "Are you sure you want to ";
                                         display_text += display_type.toString() + " ";
@@ -104,10 +103,10 @@ window.addEventListener('load', async () => {
                                         display_text += " for ";
                                         display_text += clicked_price.toString();
                                         display_text += " MMC?"
+
                                         if (confirm(display_text)) {
-                                            txt = "You pressed OK!";
-                                          } else {
-                                            txt = "You pressed Cancel!";
+                                            marketplace.fillOrder(clicked_id, function (error, result) {
+                                            });
                                           }
                                     });
                                 }
