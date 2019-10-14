@@ -133,7 +133,8 @@ window.addEventListener('load', async () => {
 
             $('#create_button').click(function () {
                 var order_title = String($('#order_title'));
-                var order_type = document.getElementById(radio_buy).checked;
+                var radio = document.getElementsByName('radio');
+                var order_type = radio[0].checked;
                 var order_price = parseInt($('#order_price')) * (10 ** 12);
 
                 console.log(order_type);
