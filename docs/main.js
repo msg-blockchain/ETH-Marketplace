@@ -60,7 +60,7 @@ window.addEventListener('load', async () => {
                                 var count = 0;
                                 if (counter == final_order) {
                                     for (i = 0; i < table_length; i++) {
-                                        var order_id = allOrders[count][0];
+                                        var order_id = allOrders[count];
                                         var recent_name = allOrders[count][1];
                                         var recent_order_type = allOrders[count][2];
                                         if (recent_order_type == true) {
