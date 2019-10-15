@@ -307,7 +307,7 @@
 
 .price_tag {
     position: absolute;
-    left: 350px;
+    left: 355px;
     top: 17px;
     overflow: visible;
     width: auto;
@@ -317,7 +317,7 @@
     font-family: Segoe UI;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
+    font-size: 20px;
     color: black;
     border-color: black;
     border-style: solid;
@@ -339,7 +339,7 @@
     font-family: Segoe UI;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
+    font-size: 20px;
     color: rgba(0,204,26,1);
     border-color: rgba(0,204,26,1);
     border-style: solid;
@@ -359,7 +359,7 @@
     font-family: Segoe UI;
     font-style: normal;
     font-weight: normal;
-    font-size: 22px;
+    font-size: 20px;
     color: rgba(204,0,0,1);
     border-color: rgba(204,0,0,1);
     border-style: solid;
