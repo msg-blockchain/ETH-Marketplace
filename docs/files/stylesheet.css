@@ -162,7 +162,7 @@
 @keyframes clipMe {
     0%, 100% {border-width: 1px}
     50% {border-width: 3px}
-  }
+}
 
 .menu_button_content {
     position: absolute;
@@ -434,4 +434,41 @@
 
 .scroll_area::-webkit-scrollbar {
     display: none;
+}
+
+.small_button {
+    position: absolute;
+    top: 50%;
+    width: 25%;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    color: black;
+    transform: translateY(-50%);
+}
+
+.small_button:hover {
+    animation-name: clipMe;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.small_button_content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    color: black;
+    transform: translateY(-50%);
 }
