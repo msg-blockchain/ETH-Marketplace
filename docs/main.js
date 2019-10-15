@@ -10,7 +10,6 @@ window.addEventListener('load', async () => {
             await ethereum.enable();
             var marketplace = web3.eth.contract(abi).at(contractAddress);
             var user_account = web3.eth.accounts;
-
             marketplace.balanceOf(user_account, function (error, result) {
                 if (!error) {
                     console.log(JSON.stringify(result));
@@ -176,8 +175,8 @@ window.addEventListener('load', async () => {
                                     console.log('User is registered');
                                     if (location == 'https://msg-blockchain.github.io/ETH-Marketplace/Register.html' || location == 'https://msg-blockchain.github.io/ETH-Marketplace/Register_Message.html') {
                                         window.open("https://msg-blockchain.github.io/ETH-Marketplace/index.html", "_self");
-                                    }                                }
-
+                                    }                   
+                                }
                                 else if (i = (userCount-1)) {
                                     if (location != 'https://msg-blockchain.github.io/ETH-Marketplace/Register.html' && location != 'https://msg-blockchain.github.io/ETH-Marketplace/Register_Message.html') {
                                         window.open("https://msg-blockchain.github.io/ETH-Marketplace/Register.html", "_self");
@@ -195,10 +194,18 @@ window.addEventListener('load', async () => {
                 }
             });
 
-            //TODO---------------------------------------
-            //Automatically go to Register site if user is not registered
-            //Register Functionality
-
+            $('#register_button').click(function () {
+                var user_name = String($('#user_name_input').val());
+                marketplace.createNewUser(user_name, function (error, result) {
+                    if (!error) {
+                        console.log(JSON.stringify(result));
+                    }
+                    else {
+                        console.error(error);
+                    }
+                });
+            });
+            
         } catch (error) {
             // User denied account access...
         }
