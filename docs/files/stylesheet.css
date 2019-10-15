@@ -438,17 +438,14 @@
 
 .small_button {
     position: absolute;
-    top: 50%;
-    width: 25%;
+    width: 160px;
+    height: 60px;
     overflow: visible;
-    white-space: nowrap;
-    text-align: center;
-    font-family: Segoe UI;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 28px;
-    color: black;
-    transform: translateY(-50%);
+    background-color: white;
+    border-radius: 2px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
 }
 
 .small_button:hover {
