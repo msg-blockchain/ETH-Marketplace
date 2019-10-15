@@ -87,7 +87,8 @@ window.addEventListener('load', async () => {
                                         count += 1;
                                     }
                                     $('.marketplace_order_box').click(function () {
-                                        var clicked_id = parseInt(this.id);
+                                        var clicked_id = parseInt(this.id)
+                                        console.log(clicked_id);
                                         var clicked_title = allOrders[clicked_id][1];
                                         var clicked_price = parseInt(allOrders[clicked_id][3] / (10 ** 12));
                                         var clicked_type = allOrders[clicked_id][2];
