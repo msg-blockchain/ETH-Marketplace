@@ -167,6 +167,7 @@
 .menu_button_content {
     position: absolute;
     top: 50%;
+    left: 50%;
     width: 100%;
     overflow: visible;
     white-space: nowrap;
@@ -176,6 +177,9 @@
     font-weight: normal;
     font-size: 28px;
     color: black;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+
 }
 
 .MMC_balance_wrapper {
@@ -457,6 +461,7 @@
 .small_button_content {
     position: absolute;
     top: 50%;
+    left: 50%;
     width: 100%;
     overflow: visible;
     white-space: nowrap;
@@ -466,4 +471,6 @@
     font-weight: normal;
     font-size: 22px;
     color: black;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
 }
