@@ -178,9 +178,7 @@
     font-weight: normal;
     font-size: 28px;
     color: black;
-    transform: translateY(-50%);
     transform: translateX(-50%);
-
 }
 
 .MMC_balance_wrapper {
