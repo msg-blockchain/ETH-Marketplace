@@ -178,6 +178,7 @@ window.addEventListener('load', async () => {
                                     }                   
                                 }
                                 else if (i = (userCount-1)) {
+                                    console.log('User is not yet registered');
                                     if (location != 'https://msg-blockchain.github.io/ETH-Marketplace/Register.html' && location != 'https://msg-blockchain.github.io/ETH-Marketplace/Register_Message.html') {
                                         window.open("https://msg-blockchain.github.io/ETH-Marketplace/Register.html", "_self");
                                     }
