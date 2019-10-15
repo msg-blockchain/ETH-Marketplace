@@ -166,7 +166,7 @@
 
 .menu_button_content {
     position: absolute;
-    top: 50%;
+    top: 0%;
     left: 50%;
     width: 100%;
     height: 100%;
@@ -459,6 +459,7 @@
 
 .small_button_content {
     position: absolute;
+    top: 0%;
     left: 50%;
     width: 100%;
     height: 100%;
