@@ -473,6 +473,5 @@
     font-weight: normal;
     font-size: 22px;
     color: black;
-    transform: translateY(-50%);
     transform: translateX(-50%);
 }
