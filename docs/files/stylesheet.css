@@ -439,7 +439,7 @@
 .small_button {
     position: absolute;
     width: 160px;
-    height: 60px;
+    height: 54px;
     overflow: visible;
     background-color: white;
     border-radius: 2px;
@@ -465,7 +465,7 @@
     font-family: Segoe UI;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 22px;
     color: black;
     transform: translateY(-50%);
 }
