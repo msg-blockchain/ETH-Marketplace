@@ -107,7 +107,7 @@ window.addEventListener('load', async () => {
                                         display_text += " MMC?"
                                         console.log(clicked_id);
                                         if (confirm(display_text)) {
-                                            marketplace.fillOrder(clicked_id, function (error, result) {
+                                            marketplace.fillOrder(allOrders[clicked_id][0], function (error, result) {
                                                 if (!error) {
                                                     console.log(JSON.stringify(result));
                                                     location.reload();
