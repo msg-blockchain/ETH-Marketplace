@@ -157,6 +157,7 @@
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+    border-color: blue;
 }
 
 @keyframes clipMe {
@@ -281,6 +282,7 @@
 
 .marketplace_order_box:hover {
     border-width: 2px;
+    border-color: blue;
 }
 
 .marketplace_order_box_content {
