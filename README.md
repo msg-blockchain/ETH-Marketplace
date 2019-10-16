@@ -1,10 +1,9 @@
 # A minimalist Ethereum based Marketplace
-Functionality: Create Users, create Orders, fill Orders, buy MegaMarket Coins (MMC) with Ethereum etc.
 
-## Get started! (Google Chrome Setup)
+## Get started! (with Google Chrome)
 
 1. Install Metamask Extension -> https://metamask.io/
-2. Set up a Wallet
+2. Set up a Wallet in Metamask
 3. Switch from *Ethereum Mainnet* to *Ropsten Testnetwork* in Metamask
 4. Get Testnet Ether from Faucet -> https://faucet.metamask.io/ (can be used multiple times)
 5. Go to https://msg-blockchain.github.io/ETH-Marketplace/index.html and register
