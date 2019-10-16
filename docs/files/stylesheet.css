@@ -209,8 +209,8 @@
 .MMC_coin {
     position: absolute;
     overflow: visible;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     left: 0px;
     top: 0px;
     border-radius: 50%;
@@ -221,7 +221,7 @@
 .MMC_coin_text {
     position: absolute;
     left: 0px;
-    top: 12px;
+    top: 10px;
     overflow: hidden;
     width: 44px;
     height: 24px;
@@ -229,7 +229,7 @@
     font-family: Segoe UI;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 12px;
     color: black;
 }
 
