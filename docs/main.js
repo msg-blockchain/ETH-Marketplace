@@ -69,7 +69,7 @@ window.addEventListener('load', async () => {
                                             recent_order_type_text = "<div class='buy_order_tag'><span>Buy</span></div>";
                                         }
                                         var recent_price = parseInt(allOrders[count][3] / (10 ** 12));
-                                        var y_pos = count * 90;
+                                        var y_pos = count * 85;
                                         var recent_order = "<a><button id='"
                                         recent_order += count.toString();
                                         recent_order += "' class='marketplace_order_box' style='top: ";
