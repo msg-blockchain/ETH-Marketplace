@@ -289,7 +289,7 @@
     position: absolute;
     overflow: visible;
     width: 520px;
-    height: 70px;
+    height: 64px;
     left: 0px;
     top: 0px;
 }
@@ -297,7 +297,7 @@
 .marketplace_order_box_text {
     position: absolute;
     left: 12px;
-    top: 18px;
+    top: 15px;
     overflow: visible;
     width: 244px;
     white-space: nowrap;
@@ -312,7 +312,7 @@
 .price_tag {
     position: absolute;
     left: 355px;
-    top: 17px;
+    top: 13px;
     overflow: visible;
     width: auto;
     height: 30px;
@@ -334,7 +334,7 @@
 .buy_order_tag {
     position: absolute;
     left: 430px;
-    top: 17px;
+    top: 13px;
     overflow: visible;
     width: 54px;
     height: 30px;
