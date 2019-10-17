@@ -13,7 +13,8 @@ window.addEventListener('load', async () => {
             marketplace.balanceOf(user_account, function (error, result) {
                 if (!error) {
                     console.log(JSON.stringify(result));
-                    var x = (JSON.parse(result) / (10 ** 12)).toLocaleString();
+                    var y = JSON.parse(result) / (10 ** 12);
+                    var x = y.toLocaleString();
                     $('#balance').html(x);
                 }
                 else {
