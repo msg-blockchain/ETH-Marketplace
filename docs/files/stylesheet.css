@@ -156,7 +156,6 @@
     animation-name: clipMe;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
     border-color: blue;
 }
 
@@ -457,7 +456,6 @@
     animation-name: clipMe;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
     border-color: blue;
 }
 
