@@ -10,6 +10,7 @@ window.addEventListener('load', async () => {
             await ethereum.enable();
             var marketplace = web3.eth.contract(abi).at(contractAddress);
             var user_account = web3.eth.accounts;
+            console.log(user_account);
             marketplace.balanceOf(user_account, function (error, result) {
                 if (!error) {
                     console.log(JSON.stringify(result));
