@@ -216,9 +216,9 @@
     top: 0px;
     border-radius: 50%;
     border-style: solid;
-    border-color: darkslategrey;
+    border-color: rgb(131, 153, 153);
     border-width: 1px;
-    background: maroon;
+    background: blue;
 }
 
 .MMC_coin_text {
