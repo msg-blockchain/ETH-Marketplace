@@ -12,8 +12,8 @@
 2. Set up a wallet in Metamask
 3. Switch from *Ethereum Mainnet* to *Ropsten Testnetwork* in Metamask
 4. Get Testnet Ether from Faucet -> https://faucet.metamask.io/ (can be used multiple times)
-5. Go to https://msg-blockchain.github.io/ETH-Marketplace/Register.html and register
-6. Use the Marketplace
+5. Go to https://msg-blockchain.github.io/ETH-Marketplace/Register.html and register by typing in your name, clicking the *confirm* button an confirming the transaction in the Metamask popup window
+6. Use the Marketplace (e.g. buy MegaMarket Coins and buy or sell items)
 
 ## Documentation
 
