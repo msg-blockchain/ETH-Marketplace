@@ -23,7 +23,7 @@ The Smart Contract contains all functions of the marketplace. In this use case a
 
 ### Frontend (CSS/HTML + JS) + web3.js + Metamask
 
-A basic frontend has been created using CSS/HTML and JS. This frontend is connected via web3.js and Metamask to the blockchain.
+A basic frontend has been created using CSS/HTML and JS. This frontend is connected via web3.js and Metamask to the Ethereum Testnet Blockchain.
 
 **web3.js:** An API that allows to communicate with an Ethereum blockchain via JavaScript. The code is integrated in the frontend and allows for example to trigger a transaction on the blockchain with the click of a button or read data from the blockchain.
 docs: https://web3js.readthedocs.io/en/v1.2.1/
