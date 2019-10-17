@@ -12,10 +12,8 @@ window.addEventListener('load', async () => {
             var user_account = web3.eth.accounts;
             marketplace.balanceOf(user_account, function (error, result) {
                 if (!error) {
-                    console.log("test");
                     console.log(JSON.stringify(result));
-                    x = JSON.parse(result) / (10 ** 12);
-                    console.log(x);
+                    x = (JSON.parse(result) / (10 ** 12)).toLocaleString();
                     $('#balance').html(x);
                 }
                 else {
