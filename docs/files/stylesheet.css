@@ -311,7 +311,7 @@
 
 .price_tag {
     position: absolute;
-    left: 360px;
+    left: 370px;
     top: 15px;
     overflow: visible;
     width: auto;
@@ -333,7 +333,7 @@
 
 .buy_order_tag {
     position: absolute;
-    left: 440px;
+    left: 445px;
     top: 15px;
     overflow: visible;
     width: 54px;
@@ -353,8 +353,8 @@
 
 .sell_order_tag {
     position: absolute;
-    left: 440px;
-    top: 17px;
+    left: 445px;
+    top: 15px;
     overflow: visible;
     width: 54px;
     height: 30px;
