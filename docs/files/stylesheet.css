@@ -154,9 +154,10 @@
 
 .menu_button:hover {
     animation-name: clipMe;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     border-color: blue;
+    animation-fill-mode: forwards;
 }
 
 @keyframes clipMe {
@@ -454,9 +455,10 @@
 
 .small_button:hover {
     animation-name: clipMe;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     border-color: blue;
+    animation-fill-mode: forwards;
 }
 
 .small_button_content {
