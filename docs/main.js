@@ -77,7 +77,7 @@ window.addEventListener('load', async () => {
                                         recent_order += "px;'><div class='marketplace_order_box_text'><span>";
                                         recent_order += recent_name.toString();
                                         recent_order += "</span></div><div class='price_tag'><span>";
-                                        recent_order += recent_price.toString();
+                                        recent_order += recent_price.toLocaleString();
                                         recent_order += "</span></div>";
                                         recent_order += recent_order_type_text;
                                         recent_order += "</button></a>";
