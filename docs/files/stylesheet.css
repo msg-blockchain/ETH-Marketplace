@@ -160,8 +160,8 @@
 }
 
 @keyframes clipMe {
-    0%, 100% {border-width: 2px}
-    50% {border-width: 4px}
+    0% {border-width: 2px}
+    100% {border-width: 4px}
 }
 
 .menu_button_content {
