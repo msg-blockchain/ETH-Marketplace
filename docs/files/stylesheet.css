@@ -208,8 +208,8 @@
 .MMC_coin {
     position: absolute;
     overflow: visible;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     left: 0px;
     top: 0px;
     border-radius: 50%;
@@ -222,7 +222,7 @@
 .MMC_coin_text {
     position: absolute;
     left: 0px;
-    top: 12px;
+    top: 11px;
     overflow: hidden;
     width: 44px;
     height: 24px;
