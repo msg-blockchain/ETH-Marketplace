@@ -14,7 +14,7 @@ window.addEventListener('load', async () => {
                 if (!error) {
                     console.log("test");
                     console.log(JSON.stringify(result));
-                    x = (JSON.parse(result) / (10 ** 12)).toLocaleString();
+                    x = JSON.parse(result) / (10 ** 12);
                     console.log(x);
                     $('#balance').html(x);
                 }
