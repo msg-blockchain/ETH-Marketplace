@@ -216,6 +216,7 @@
     top: 0px;
     border-radius: 50%;
     border-style: solid;
+    border-color: darkslategrey;
     border-width: 1px;
     background: maroon;
 }
