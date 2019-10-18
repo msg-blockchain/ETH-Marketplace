@@ -8,12 +8,13 @@
 
 ## Get started! (with Google Chrome)
 
-1. Install the Metamask extension -> https://metamask.io/
+1. Install the Metamask extension for Chrome -> https://metamask.io/
 2. Set up a wallet in Metamask
 3. Switch from *Ethereum Mainnet* to *Ropsten Testnetwork* in Metamask
-4. Get Testnet Ether from the Faucet (cick on *request 1 ether from faucet*) -> https://faucet.metamask.io/ (can be used multiple times)
-5. Go to https://msg-blockchain.github.io/ETH-Marketplace/Register.html and sign up by typing in your name, clicking the *confirm* button and confirming the transaction in the Metamask popup window
-6. Use the Marketplace (e.g. buy MegaMarket Coins and buy / sell items)
+4. Go to https://faucet.metamask.io/ and accept the connection request in the Metmask popup window, click on *request 1 ether from faucet* on the website and wait 10 seconds (the faucet can be used multiple times, if it was successful it shows a transaction on the bottom of the website)
+5. Go to https://msg-blockchain.github.io/ETH-Marketplace/Register.html and accept the connection request in the Metamask popup window
+6. Sign up by typing in your name, clicking the *confirm* button and confirming the transaction in the Metamask popup window
+7. Use the Marketplace (e.g. buy MegaMarket Coins and buy / sell items)
 
 ## Documentation
 
